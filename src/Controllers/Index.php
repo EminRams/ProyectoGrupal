@@ -12,7 +12,7 @@ class Index extends PublicController
     public function run(): void
     {
         $viewData = array();
-        \Views\Renderer::render("index", $viewData);
+        \Views\Renderer::render("index", $viewData, 'layoutLanding.view.tpl');
     }
 }
 ?>
