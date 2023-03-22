@@ -26,7 +26,7 @@ class Productos extends Table
 
         $sqlstr = "INSERT INTO productos 
                     (id_marca, id_categoria, id_prenda, id_color, nombre, descripcion, precio, stock, talla, enlace_imagen, estado) 
-                    values (:id_marca, :id_categoria, :id_prenda, :id_color, :nombre, :descripcion, :precio, :talla, :enlace_imagen, :estado);";
+                    values (:id_marca, :id_categoria, :id_prenda, :id_color, :nombre, :descripcion, :precio, :stock, :talla, :enlace_imagen, :estado);";
 
         $rowsInserted = self::executeNonQuery(
             $sqlstr,
@@ -62,7 +62,7 @@ class Productos extends Table
         string $estado
     ) {
         $sqlstr = "UPDATE productos SET id_marca = :id_marca, id_categoria = :id_categoria, id_prenda = :id_prenda, 
-                    id_color = :id_color, nombre = :nombre, descripcion = :descripcion, precio = :precio, talla = :talla, 
+                    id_color = :id_color, nombre = :nombre, descripcion = :descripcion, precio = :precio, stock = :stock, talla = :talla, 
                     enlace_imagen = :enlace_imagen, estado = :estado WHERE id_producto = :id_producto;";
         $rowsUpdated = self::executeNonQuery(
             $sqlstr,
@@ -131,7 +131,7 @@ class Productos extends Table
         $sqlstr = "SELECT nombre FROM categorias";
         return self::obtenerRegistros($sqlstr, array());
     }
-    
+
     public static function findMarcas()
     {
         $sqlstr = "SELECT nombre FROM marcas";

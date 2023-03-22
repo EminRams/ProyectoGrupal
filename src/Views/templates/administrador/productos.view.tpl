@@ -17,8 +17,10 @@
                 <div class="card-body">
                     <div class="row mb-2">
                         <div class="col-sm-4">
-                            <a href="index.php?page=administrador_producto&mode=INS" class="btn btn-info mb-2">
+                            {{if new_enabled}}
+                            <a id="btnAdd" class="btn btn-info mb-2">
                                 <i class="mdi mdi-plus-circle me-2"></i> Add Products</a>
+                                {{endif new_enabled}}
                         </div>
                         <div class="col-sm-8">
                             <div class="text-sm-end">
@@ -65,36 +67,24 @@
                                         {{estado}}
                                     </td>
                                     <td class="table-action">
+                                        <a type="submit" class="action-icon"
+                                            href="index.php?page=administrador_producto&mode=DSP&id_producto={{id_producto}}">
+                                            <i class="mdi mdi-eye"></i>
+                                        </a>
                                         {{if ~edit_enabled}}
-                                        <form action="index.php" method="get">
-                                            <input type="hidden" name="page" value="administrador_producto" />
-                                            <input type="hidden" name="mode" value="UPD" />
-                                            <input type="hidden" name="id_producto" value={{id_producto}} />
-                                            <button type="submit" class="action-icon">
-                                                <i class="mdi mdi-square-edit-outline"></i>
-
-                                            </button>
-                                        </form>
+                                        <a type="submit" class="action-icon"
+                                            href="index.php?page=administrador_producto&mode=UPD&id_producto={{id_producto}}">
+                                            <i class="mdi mdi-square-edit-outline"></i>
+                                        </a>
                                         {{endif ~edit_enabled}}
 
-                                        <a href="index.php?page=administrador_producto&mode=DSP&id_producto={{id_producto}}">
-                                                <i class="mdi mdi-eye"></i>
-                                        </a>
-                                        <a href="javascript:void(0);" class="action-icon">
-                                        </a>
-
-                                        </form>
-                                        {{endif ~edit_enabled}}
                                         {{if ~delete_enabled}}
-                                        <form action="index.php" method="get">
-                                            <input type="hidden" name="page" value="id_producto" />
-                                            <input type="hidden" name="mode" value="DEL" />
-                                            <input type="hidden" name="id_producto" value={{id_producto}} />
-                                            <button type="submit">
-                                                <i class="mdi mdi-delete"></i>
-                                            </button>
-                                        </form>
+                                        <a type="submit" class="action-icon"
+                                            href="index.php?page=administrador_producto&mode=DEL&id_producto={{id_producto}}">
+                                            <i class="mdi mdi-delete"></i>
+                                        </a>
                                         {{endif ~delete_enabled}}
+
                                     </td>
                                 </tr>
                                 {{endfor productos}}
@@ -110,3 +100,13 @@
     <!-- end row -->
 
 </div> <!-- container -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("btnAdd").addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.assign("index.php?page=administrador_producto&mode=INS&id_producto=0");
+        });
+    });
+</script>

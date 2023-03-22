@@ -1,6 +1,6 @@
 <div class="container-fluid">
-    <h2>Formulario de productos</h2>
-    <form action="index.php?page=administrador_productos&mode={{mode}}&id_producto={{id_producto}}" method="post" class="card">
+    <h2>{{modedsc}}</h2>
+    <form action="index.php?page=administrador_producto&mode={{mode}}&id_producto={{id_producto}}" method="post" class="card">
         <div class="card-body">
             <div class="row g-2">
                 <!--ID Producto-->
@@ -36,7 +36,7 @@
                 <div class="col-md-3 col-lg-6">
                     <div class="input-group mb-3 col-sm-3">
                         <label class="input-group-text" for="categoria">Categoría</label>
-                        <select class="form-select" id="categoria">
+                        <select class="form-select" id="categoria" name="categoria">
                             <option selected=""></option>
                             {{foreach categorias}}
                             <option value="{{nombre}}">{{nombre}}</option>
@@ -48,7 +48,7 @@
                 <div class="col-md-3 col-lg-6">
                     <div class="input-group mb-3 col-sm-3">
                         <label class="input-group-text" for="marca">Marca</label>
-                        <select class="form-select" id="marca">
+                        <select class="form-select" id="marca" name="marca">
                             <option selected=""></option>
                             {{foreach marcas}}
                             <option value="{{nombre}}">{{nombre}}</option>
@@ -60,7 +60,7 @@
                 <div class="col-md-3 col-lg-6">
                     <div class="input-group mb-3 col-md-4 col-lg-3">
                         <label class="input-group-text" for="prenda">Prenda</label>
-                        <select class="form-select" id="prenda">
+                        <select class="form-select" id="prenda" name="prenda">
                             <option selected=""></option>
                             {{foreach prendas}}
                             <option value="{{nombre}}">{{nombre}}</option>
@@ -72,7 +72,7 @@
                 <div class="col-md-3 col-lg-6">
                     <div class="input-group mb-3 col-md-4 col-lg-3">
                         <label class="input-group-text" for="color">Color</label>
-                        <select class="form-select" id="color">
+                        <select class="form-select" id="color" name="color">
                             <option selected=""></option>
                             {{foreach colores}}
                             <option value="{{nombre}}">{{nombre}}</option>
@@ -146,7 +146,7 @@
                     <!--File-->
                     <div class="col-sm-6">
                         <label class="form-label">File input</label>
-                        <input class="form-control" type="file" id="inputGroupFile04" />
+                        <input class="form-control" type="file" id="enlace_imagen" name="enlace_imagen" />
                     </div>
                     <!--Descripcion-->
                     <div class="col-sm-6">
@@ -161,7 +161,7 @@
             </div>
             <br>
             <button type="submit" name="btnGuardar" value="G" class="btn btn-primary me-2">Confirmar</button>
-            <button type="submit" name="btnCancelar" class="btn btn-danger">Cancelar</button>
+            <button type="button" id="btnCancelar" class="btn btn-danger">Cancelar</button>
         </div>
     </form>
 </div>

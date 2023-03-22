@@ -19,7 +19,7 @@ class Producto extends PublicController
         "color" => "",
         "nombre" => "",
         "descripcion" => "",
-        "precio" => 0.00,
+        "precio" => 0,
         "stock" => 0,
         "talla" => "",
         "enlace_imagen" => "",
@@ -65,7 +65,7 @@ class Producto extends PublicController
             error_log(sprintf("Controller/Administrador/Producto ERROR: %s", $error->getMessage()));
             \Utilities\Site::redirectToWithMsg(
                 $this->redirectTo,
-                "Algo Inesperado Sucedió. Intente de Nuevo."
+                "Algo Inesperado Sucedió. Intente de Nuevo"
             );
         }
     }
@@ -163,7 +163,7 @@ class Producto extends PublicController
         if (isset($_POST["descripcion"])) {
             if (\Utilities\Validators::IsEmpty($_POST["descripcion"])) {
                 $this->viewData["has_errors"] = true;
-                $this->viewData["descripcion_error"] = "La descripcion no puede ir vacío!";
+                $this->viewData["descripcion_error"] = "La descripcion no puede ir vacía!";
             }
         } else {
             throw new Exception("descripcion not present in form");
@@ -185,7 +185,7 @@ class Producto extends PublicController
         }
         // STOCK PRODUCTO
         if (isset($_POST["stock"])) {
-            if (($this->viewData["mode"] !== "INS" && floatval($_POST["stock"]) <= 0)) {
+            if (($this->viewData["mode"] !== "INS" && intval($_POST["stock"]) <= 0)) {
                 throw new Exception("stock is not Valid");
             }
             if (\Utilities\Validators::IsEmpty($_POST["stock"])) {
