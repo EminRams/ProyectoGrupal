@@ -152,8 +152,8 @@
                     <div class="col-sm-6">
                         <label class="form-label">Descripción del producto</label>
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Agregue una descripción" id="descripcion"
-                                name="descripcion" {{nombre}} style="height: 100px; resize: none;"></textarea>
+                            <input class="form-control" placeholder="Agregue una descripción" id="descripcion"
+                                name="descripcion" {{nombre}} value="{{descripcion}}" style="height: 100px; resize: none;"></input>
                             <label for="floatingTextarea">Descripción</label>
                         </div>
                     </div>
