@@ -79,7 +79,7 @@
 
                     <div class="row mt-3">
                         <div class="col-12 text-center">
-                            <p class="text-muted">¿No tienes una cuenta?<a href="pages-register.html"
+                            <p class="text-muted">¿No tienes una cuenta?<a href="index.php?page=seguridad_register"
                                     class="text-muted ms-1"><b>Crear una cuenta</b></a></p>
                         </div> <!-- end col -->
                     </div>

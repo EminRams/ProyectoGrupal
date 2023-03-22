@@ -23,7 +23,7 @@
     <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-xxl-4 col-lg-5">
+                <div class="col-xxl-8 col-lg-8">
                     <div class="card">
                         <!-- Logo-->
                         <div class="card-header pt-4 pb-4 text-center bg-primary">
@@ -40,29 +40,25 @@
                                 </p>
                             </div>
 
-                            <form action="#">
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Usuario</label>
-                                    <input class="form-control" type="text" id="nombre"
-                                        placeholder="Ingrese su nombre de usuario" required>
-                                </div>
-                                <div class="mb-3">
+                            <form class="row" action="#">                            
+                                <div class="mb-3 col-6">
                                     <label for="nombre" class="form-label">Nombre</label>
                                     <input class="form-control" type="text" id="nombre" placeholder="Ingrese su nombre"
                                         required>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3 col-6">
                                     <label for="apellido" class="form-label">Apellido</label>
                                     <input class="form-control" type="text" id="apellido"
                                         placeholder="Ingrese su apellido" required>
                                 </div>
-
-                                <div class="mb-3">
+                                
+                                <div class="mb-3 col-6">
                                     <label for="correo_electronico" class="form-label">Correo electrónico</label>
                                     <input class="form-control" type="email" id="correo_electronico" required
                                         placeholder="Ingrese su correo electrónico">
                                 </div>
-                                <div class="mb-3">
+
+                                <div class="mb-3 col-6">
                                     <label for="telefono" class="form-label">Teléfono</label>
                                     <input class="form-control" type="text" id="telefono" required
                                         placeholder="Ingrese su número de teléfono">
@@ -72,10 +68,17 @@
                                     <div class="form-floating">
                                         <textarea class="form-control" placeholder="Agregue una descripción"
                                             id="floatingTextarea" style="height: 100px; resize: none;"></textarea>
-                                        <label for="floatingTextarea">Dirección</label>
+                                        <label for="floatingTextarea">Ingrese dirección del domicilio</label>
                                     </div>
                                 </div>
-                                <div class="mb-3">
+
+                                <div class="mb-3 col-6">
+                                    <label for="nombre" class="form-label">Usuario</label>
+                                    <input class="form-control" type="text" id="nombre"
+                                        placeholder="Ingrese su nombre de usuario" required>
+                                </div>
+
+                                <div class="mb-3 col-6">
                                     <label for="contrasenia" class="form-label">Contraseña</label>
                                     <div class="input-group input-group-merge">
                                         <input type="password" id="contrasenia" class="form-control"
@@ -105,8 +108,8 @@
 
                     <div class="row mt-3">
                         <div class="col-12 text-center">
-                            <p class="text-muted">Already have account? <a href="pages-login.html"
-                                    class="text-muted ms-1"><b>Log In</b></a></p>
+                            <p class="text-muted">¿Ya estás registrado? <a href="index.php?page=seguridad_login"
+                                    class="text-muted ms-1"><b>Iniciar sesión</b></a></p>
                         </div> <!-- end col-->
                     </div>
                     <!-- end row -->
