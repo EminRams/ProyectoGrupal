@@ -35,14 +35,10 @@
 
                                     <th class="all">ID</th>
                                     <th>Marca</th>
-                                    <th>Categoría</th>
-                                    <th>Prenda</th>
-                                    <th>Color</th>
                                     <th>Producto</th>
-                                    <th>Descripción</th>
-                                    <th>Precio</th>
                                     <th>Stock</th>
                                     <th>Talla</th>
+                                    <th>Estado</th>
                                     <th style="width: 120px;">Action</th>
                                 </tr>
                             </thead>
@@ -57,28 +53,16 @@
                                         {{marca}}
                                     </td>
                                     <td>
-                                        {{categoria}}
-                                    </td>
-                                    <td>
-                                        {{prenda}}
-                                    </td>
-                                    <td>
-                                        {{color}}
-                                    </td>
-                                    <td>
                                         {{nombre}}
-                                    </td>
-                                    <td>
-                                        {{descripcion}}
-                                    </td>
-                                    <td>
-                                        {{precio}}
                                     </td>
                                     <td>
                                         {{stock}}
                                     </td>
                                     <td>
                                         {{talla}}
+                                    </td>
+                                    <td>
+                                        {{estado}}
                                     </td>
                                     {{endfor productos}}
                                     <td class="table-action">
