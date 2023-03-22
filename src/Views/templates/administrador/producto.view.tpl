@@ -9,7 +9,7 @@
                     <input type="hidden" id="id_producto" name="id_producto" value="{{id_producto}}" />
                     <input type="hidden" id="mode" name="mode" value="{{mode}}" />
                     <input type="hidden" name="xssToken" value="{{xssToken}}" />
-                    <input type="number" readonly name="id_productodummy" class="form-control" id="id_producto"
+                    <input type="number" readonly name="id_productodummy" class="form-control" value="{{id_producto}}"
                         placeholder="ID Producto">
                 </div>
                 <!--Nombre-->
