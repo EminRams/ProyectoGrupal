@@ -7,10 +7,10 @@ use Dao\Table;
 class Productos extends Table
 {
     public static function insert(
-        int $id_marca,
-        int $id_categoria,
-        int $id_prenda,
-        int $id_color,
+        string $marca,
+        string $categoria,
+        string $prenda,
+        string $color,
         string $nombre,
         string $descripcion,
         float $precio,
@@ -19,6 +19,11 @@ class Productos extends Table
         string $enlace_imagen,
         string $estado
     ): int {
+        $id_marca = self::findId("marcas", "id_marca", $marca);
+        $id_categoria = self::findId("categorias", "id_categoria", $categoria);
+        $id_prenda = self::findId("prendas", "id_prenda", $prenda);
+        $id_color = self::findId("colores", "id_color", $color);
+
         $sqlstr = "INSERT INTO productos 
                     (id_marca, id_categoria, id_prenda, id_color, nombre, descripcion, precio, stock, talla, enlace_imagen, estado) 
                     values (:id_marca, :id_categoria, :id_prenda, :id_color, :nombre, :descripcion, :precio, :talla, :enlace_imagen, :estado);";
@@ -107,5 +112,41 @@ class Productos extends Table
             )
         );
         return $row;
+    }
+
+    public static function findId(string $tabla, string $idNombre, string $nombre): int
+    {
+        $sqlstr = "Select" . $idNombre . " from " . $tabla . " WHERE nombre = :nombre ;";
+        $row = self::obtenerUnRegistro(
+            $sqlstr,
+            array(
+                $idNombre => $nombre
+            )
+        );
+        return $row;
+    }
+
+    public static function findCategorias()
+    {
+        $sqlstr = "SELECT nombre FROM categorias";
+        return self::obtenerRegistros($sqlstr, array());
+    }
+    
+    public static function findMarcas()
+    {
+        $sqlstr = "SELECT nombre FROM marcas";
+        return self::obtenerRegistros($sqlstr, array());
+    }
+
+    public static function findPrendas()
+    {
+        $sqlstr = "SELECT nombre FROM prendas";
+        return self::obtenerRegistros($sqlstr, array());
+    }
+
+    public static function findColors()
+    {
+        $sqlstr = "SELECT nombre FROM colores";
+        return self::obtenerRegistros($sqlstr, array());
     }
 }

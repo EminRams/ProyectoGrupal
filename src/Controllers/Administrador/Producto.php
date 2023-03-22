@@ -13,10 +13,10 @@ class Producto extends PublicController
         "mode" => "DSP",
         "modedsc" => "",
         "id_producto" => 0,
-        "id_marca" => 0,
-        "id_categoria" => 0,
-        "id_prenda" => 0,
-        "id_color" => 0,
+        "marca" => "",
+        "categoria" => "",
+        "prenda" => "",
+        "color" => "",
         "nombre" => "",
         "descripcion" => "",
         "precio" => 0.00,
@@ -27,6 +27,10 @@ class Producto extends PublicController
         "estado_ACT" => "selected",
         "estado_INA" => "",
         "nombre_error" => "",
+        "marca_error" => "",
+        "categoria_error" => "",
+        "prenda_error" => "",
+        "color_error" => "",
         "descripcion_error" => "",
         "precio_error" => "",
         "stock_error" => "",
@@ -35,8 +39,9 @@ class Producto extends PublicController
         "has_errors" => false,
         "show_action" => true,
         "readonly" => false,
-        "xssToken" => ""
+        "xssToken" => "",
     );
+
 
     private $modes = array(
         "DSP" => "Detalle de %s (%s)",
@@ -109,49 +114,41 @@ class Producto extends PublicController
         } else {
             throw new Exception("id_producto not present in form");
         }
-        // ID MARCA
-        if (isset($_POST["id_marca"])) {
-            if (($this->viewData["mode"] !== "INS" && intval($_POST["id_marca"]) <= 0)) {
-                throw new Exception("id_marca is not Valid");
-            }
-            if ($this->viewData["id_marca"] !== intval($_POST["id_marca"])) {
-                throw new Exception("id_marca value is different from query");
+        // MARCA
+        if (isset($_POST["marca"])) {
+            if (\Utilities\Validators::IsEmpty($_POST["marca"])) {
+                $this->viewData["has_errors"] = true;
+                $this->viewData["marca_error"] = "Seleccione una marca!";
             }
         } else {
-            throw new Exception("id_marca not present in form");
+            throw new Exception("marca not present in form");
         }
-        //ID CATEGORIA 
-        if (isset($_POST["id_categoria"])) {
-            if (($this->viewData["mode"] !== "INS" && intval($_POST["id_categoria"]) <= 0)) {
-                throw new Exception("id_categoria is not Valid");
-            }
-            if ($this->viewData["id_categoria"] !== intval($_POST["id_categoria"])) {
-                throw new Exception("id_categoria value is different from query");
+        // CATEGORIA 
+        if (isset($_POST["categoria"])) {
+            if (\Utilities\Validators::IsEmpty($_POST["categoria"])) {
+                $this->viewData["has_errors"] = true;
+                $this->viewData["categoria_error"] = "Seleccione una categoria!";
             }
         } else {
-            throw new Exception("id_categoria not present in form");
+            throw new Exception("Categoria not present in form");
         }
-        //ID PRENDA
-        if (isset($_POST["id_prenda"])) {
-            if (($this->viewData["mode"] !== "INS" && intval($_POST["id_prenda"]) <= 0)) {
-                throw new Exception("id_prenda is not Valid");
-            }
-            if ($this->viewData["id_prenda"] !== intval($_POST["id_prenda"])) {
-                throw new Exception("id_prenda value is different from query");
+        // PRENDA
+        if (isset($_POST["prenda"])) {
+            if (\Utilities\Validators::IsEmpty($_POST["prenda"])) {
+                $this->viewData["has_errors"] = true;
+                $this->viewData["prenda_error"] = "Seleccione una prenda!";
             }
         } else {
-            throw new Exception("id_prenda not present in form");
+            throw new Exception("prenda not present in form");
         }
-        //ID COLOR
-        if (isset($_POST["id_color"])) {
-            if (($this->viewData["mode"] !== "INS" && intval($_POST["id_color"]) <= 0)) {
-                throw new Exception("id_color is not Valid");
-            }
-            if ($this->viewData["id_color"] !== intval($_POST["id_color"])) {
-                throw new Exception("id_color value is different from query");
+        //COLOR
+        if (isset($_POST["color"])) {
+            if (\Utilities\Validators::IsEmpty($_POST["color"])) {
+                $this->viewData["has_errors"] = true;
+                $this->viewData["color_error"] = "Seleccione una color!";
             }
         } else {
-            throw new Exception("id_color not present in form");
+            throw new Exception("color not present in form");
         }
         // NOMBRE PRODUCTO
         if (isset($_POST["nombre"])) {
@@ -222,10 +219,10 @@ class Producto extends PublicController
             throw new Exception("mode not present in form");
         }
 
-        $this->viewData["id_marca"] = $_POST["id_marca"];
-        $this->viewData["id_categoria"] = $_POST["id_categoria"];
-        $this->viewData["id_prenda"] = $_POST["id_prenda"];
-        $this->viewData["id_color"] = $_POST["id_color"];
+        $this->viewData["marca"] = $_POST["marca"];
+        $this->viewData["categoria"] = $_POST["categoria"];
+        $this->viewData["prenda"] = $_POST["prenda"];
+        $this->viewData["color"] = $_POST["color"];
         $this->viewData["nombre"] = $_POST["nombre"];
         $this->viewData["descripcion"] = $_POST["descripcion"];
         $this->viewData["precio"] = $_POST["precio"];
@@ -242,10 +239,10 @@ class Producto extends PublicController
         switch ($this->viewData["mode"]) {
             case "INS":
                 $inserted = \Dao\Admin\Productos::insert(
-                    $this->viewData["id_marca"],
-                    $this->viewData["id_categoria"],
-                    $this->viewData["id_prenda"],
-                    $this->viewData["id_color"],
+                    $this->viewData["marca"],
+                    $this->viewData["categoria"],
+                    $this->viewData["prenda"],
+                    $this->viewData["color"],
                     $this->viewData["nombre"],
                     $this->viewData["descripcion"],
                     $this->viewData["precio"],
@@ -263,11 +260,11 @@ class Producto extends PublicController
                 break;
             case "UPD":
                 $updated = \Dao\Admin\Productos::update(
-                    $this->viewData["id_producto"],
-                    $this->viewData["id_marca"],
-                    $this->viewData["id_categoria"],
-                    $this->viewData["id_prenda"],
-                    $this->viewData["id_color"],
+                    $this->viewData["producto"],
+                    $this->viewData["marca"],
+                    $this->viewData["categoria"],
+                    $this->viewData["prenda"],
+                    $this->viewData["color"],
                     $this->viewData["nombre"],
                     $this->viewData["descripcion"],
                     $this->viewData["precio"],
@@ -298,7 +295,7 @@ class Producto extends PublicController
     }
     private function render()
     {
-        $xssToken = md5("CATEGORIA" . rand(0, 4000) * rand(5000, 9999));
+        $xssToken = md5("PRODUCTO" . rand(0, 4000) * rand(5000, 9999));
         $this->viewData["xssToken"] = $xssToken;
         $_SESSION["xssToken_Administrador_Producto"] = $xssToken;
 
@@ -325,6 +322,10 @@ class Producto extends PublicController
                 $this->viewData["show_action"] = false;
             }
         }
-        Renderer::render("administrador/productos", $this->viewData);
+        $this->viewData["categorias"] = \Dao\Admin\Productos::findCategorias();
+        $this->viewData["marcas"] = \Dao\Admin\Productos::findMarcas();
+        $this->viewData["prendas"] = \Dao\Admin\Productos::findPrendas();
+        $this->viewData["colores"] = \Dao\Admin\Productos::findColors();
+        Renderer::render("administrador/producto", $this->viewData);
     }
 }
