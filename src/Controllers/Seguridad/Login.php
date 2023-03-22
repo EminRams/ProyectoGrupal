@@ -20,7 +20,7 @@ class Login extends PublicController
 
         error_log(json_encode($viewData));
 
-        Renderer::render('seguridad/login', $viewData);
+        Renderer::render('seguridad/login', $viewData, "loginLayout.view.tpl");
     }
 }
 
