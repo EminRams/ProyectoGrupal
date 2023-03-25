@@ -43,7 +43,7 @@
             <select class="form-select" id="id_categoria" name="id_categoria">
               <option selected=""></option>
               {{foreach categorias}}
-              <option value="{{id_categoria}}">{{nombre}}</option>
+              <option value="{{value}}" {{selected}}>{{text}}</option>
               {{endfor categorias}}
             </select>
           </div>
@@ -55,7 +55,7 @@
             <select class="form-select" id="id_marca" name="id_marca">
               <option selected=""></option>
               {{foreach marcas}}
-              <option value="{{id_marca}}">{{nombre}}</option>
+              <option value="{{value}}" {{selected}}>{{text}}</option>
               {{endfor marcas}}
             </select>
           </div>
@@ -67,7 +67,7 @@
             <select class="form-select" id="id_prenda" name="id_prenda">
               <option selected=""></option>
               {{foreach prendas}}
-              <option value="{{id_prenda}}">{{nombre}}</option>
+              <option value="{{value}}" {{selected}}>{{text}}</option>
               {{endfor prendas}}
             </select>
           </div>
@@ -79,7 +79,7 @@
             <select class="form-select" id="id_color" name="id_color">
               <option selected=""></option>
               {{foreach colores}}
-              <option value="{{id_color}}">{{nombre}}</option>
+              <option value="{{value}}" {{selected}}>{{text}}</option>
               {{endfor colores}}
             </select>
           </div>
@@ -92,35 +92,34 @@
               <label class="input-group-text mb-2" for="talla">Talla</label>
               <div class="form-check mb-2 col-lg-3 col-md-4">
                 <div class="form-check">
-                  <input type="radio" id="talla" name="talla" class="form-check-input" value="S" {{talla}}
-                    style="border:1px solid var(--bs-indigo);" />
+                  <input type="radio" id="talla" name="talla" class="form-check-input" value="S" style="border:1px solid var(--bs-indigo);" {{talla_s}}/>
                   <label class="form-check-label" for="talla">S</label>
                 </div>
                 <div class="form-check">
-                  <input type="radio" id="talla" name="talla" class="form-check-input" value="M" {{talla}}
-                    style="border:1px solid var(--bs-indigo);" />
+                  <input type="radio" id="talla" name="talla" class="form-check-input" value="M"  
+                    style="border:1px solid var(--bs-indigo);"  {{talla_m}}/>
                   <label class="form-check-label" for="talla">M</label>
                 </div>
                 <div class="form-check">
-                  <input type="radio" id="talla" name="talla" class="form-check-input" value="L" {{talla}}
-                    style="border:1px solid var(--bs-indigo);" />
+                  <input type="radio" id="talla" name="talla" class="form-check-input" value="L"  
+                    style="border:1px solid var(--bs-indigo);"  {{talla_l}}/>
                   <label class="form-check-label" for="talla">L</label>
                 </div>
               </div>
               <div class="form-check mb-2 col-lg-3 col-md-4">
                 <div class="form-check">
-                  <input type="radio" id="talla" name="talla" class="form-check-input" value="XL" {{talla}}
-                    style="border:1px solid var(--bs-indigo);" />
+                  <input type="radio" id="talla" name="talla" class="form-check-input" value="XL"  
+                    style="border:1px solid var(--bs-indigo);"  {{talla_xl}}/>
                   <label class="form-check-label" for="talla">XL</label>
                 </div>
                 <div class="form-check">
-                  <input type="radio" id="talla" name="talla" class="form-check-input" value="XXL" {{talla}}
-                    style="border:1px solid var(--bs-indigo);" />
+                  <input type="radio" id="talla" name="talla" class="form-check-input" value="XXL"  
+                    style="border:1px solid var(--bs-indigo);"  {{talla_xxl}}/>
                   <label class="form-check-label" for="talla">XXL</label>
                 </div>
                 <div class="form-check">
-                  <input type="radio" id="talla" name="talla" class="form-check-input" value="XXXL" {{talla}}
-                    style="border:1px solid var(--bs-indigo);" />
+                  <input type="radio" id="talla" name="talla" class="form-check-input" value="XXXL"  
+                    style="border:1px solid var(--bs-indigo);"  {{talla_xxxl}}/>
                   <label class="form-check-label" for="talla">XXXL</label>
                 </div>
               </div>

@@ -26,6 +26,12 @@ class Producto extends PublicController
     "estado" => "ACT",
     "estado_ACT" => "selected",
     "estado_INA" => "",
+    "talla_s" => "",
+    "talla_m" => "",
+    "talla_l" => "",
+    "talla_xl" => "",
+    "talla_xxl" => "",
+    "talla_xxxl" => "",
     "nombre_error" => "",
     "id_marca_error" => "",
     "id_categoria_error" => "",
@@ -310,6 +316,12 @@ class Producto extends PublicController
       \Utilities\ArrUtils::mergeFullArrayTo($tmpProductos, $this->viewData);
       $this->viewData["estado_ACT"] = $this->viewData["estado"] === "ACT" ? "selected" : "";
       $this->viewData["estado_INA"] = $this->viewData["estado"] === "INA" ? "selected" : "";
+      $this->viewData["talla_s"] = $this->viewData["talla"] === "S" ? "checked" : "";
+      $this->viewData["talla_m"] = $this->viewData["talla"] === "M" ? "checked" : "";
+      $this->viewData["talla_l"] = $this->viewData["talla"] === "L" ? "checked" : "";
+      $this->viewData["talla_xl"] = $this->viewData["talla"] === "XL" ? "checked" : "";
+      $this->viewData["talla_xxl"] = $this->viewData["talla"] === "XXL" ? "checked" : "";
+      $this->viewData["talla_xxxl"] = $this->viewData["talla"] === "XXXL" ? "checked" : "";
       $this->viewData["modedsc"] = sprintf(
         $this->modes[$this->viewData["mode"]],
         $this->viewData["nombre"],
@@ -318,14 +330,51 @@ class Producto extends PublicController
       if (in_array($this->viewData["mode"], array("DSP", "DEL"))) {
         $this->viewData["readonly"] = "readonly";
       }
+
+      if ($this->viewData['talla']) {
+        $this->viewData["seleccion_talla"] = $this->viewData['talla'];
+      }
+
       if ($this->viewData["mode"] === "DSP") {
         $this->viewData["show_action"] = false;
       }
     }
-    $this->viewData["categorias"] = \Dao\Admin\Categorias::findAll();
-    $this->viewData["marcas"] = \Dao\Admin\Marcas::findAll();
-    $this->viewData["prendas"] = \Dao\Admin\Prendas::findAll();
-    $this->viewData["colores"] = \Dao\Admin\Colores::findAll();
+    $categorias = \Dao\Admin\Categorias::findAll();
+    $marcas = \Dao\Admin\Marcas::findAll();
+    $prendas = \Dao\Admin\Prendas::findAll();
+    $colores = \Dao\Admin\Colores::findAll();
+
+    $this->viewData['categorias'] = \Utilities\ArrUtils::objectArrToOptionsArray(
+      $categorias,
+      'id_categoria',
+      'nombre',
+      'id_categoria',
+      $this->viewData['id_categoria']
+    );
+
+    $this->viewData["marcas"] = \Utilities\ArrUtils::objectArrToOptionsArray(
+      $marcas,
+      'id_marca',
+      'nombre',
+      'id_marca',
+      $this->viewData['id_marca']
+    );
+
+    $this->viewData["prendas"] = \Utilities\ArrUtils::objectArrToOptionsArray(
+      $prendas,
+      'id_prenda',
+      'nombre',
+      'id_prenda',
+      $this->viewData['id_prenda']
+    );
+
+    $this->viewData["colores"] = \Utilities\ArrUtils::objectArrToOptionsArray(
+      $colores,
+      'id_color',
+      'nombre',
+      'id_color',
+      $this->viewData['id_color']
+    );
 
     Renderer::render("administrador/producto", $this->viewData);
   }
