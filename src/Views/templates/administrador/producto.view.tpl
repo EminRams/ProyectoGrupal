@@ -132,13 +132,13 @@
             <label class="input-group-text mb-2" for="categoria">Estado</label>
             <div class="form-check mb-2 col-lg-1 col-md-4">
               <div class="form-check">
-                <input type="radio" id="estado" name="estado" class="form-check-input" value="ACT" {{estado_ACT}}
-                  style="border:1px solid var(--bs-indigo);" checked />
+                <input type="radio" id="estado" name="estado" class="form-check-input" value="ACT"
+                  style="border:1px solid var(--bs-indigo);" {{estado_ACT}}/>
                 <label class="form-check-label" for="estado">Activo</label>
               </div>
               <div class="form-check">
-                <input type="radio" id="estado" name="estado" class="form-check-input" value="INA" {{estado_INA}}
-                  style="border:1px solid var(--bs-indigo);" />
+                <input type="radio" id="estado" name="estado" class="form-check-input" value="INA"
+                  style="border:1px solid var(--bs-indigo);" {{estado_INA}}/>
                 <label class="form-check-label" for="estado">Inactivo</label>
               </div>
             </div>

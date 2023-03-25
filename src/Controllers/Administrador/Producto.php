@@ -314,8 +314,8 @@ class Producto extends PublicController
       }
 
       \Utilities\ArrUtils::mergeFullArrayTo($tmpProductos, $this->viewData);
-      $this->viewData["estado_ACT"] = $this->viewData["estado"] === "ACT" ? "selected" : "";
-      $this->viewData["estado_INA"] = $this->viewData["estado"] === "INA" ? "selected" : "";
+      $this->viewData["estado_ACT"] = $this->viewData["estado"] === "ACT" ? "checked" : "";
+      $this->viewData["estado_INA"] = $this->viewData["estado"] === "INA" ? "checked" : "";
       $this->viewData["talla_s"] = $this->viewData["talla"] === "S" ? "checked" : "";
       $this->viewData["talla_m"] = $this->viewData["talla"] === "M" ? "checked" : "";
       $this->viewData["talla_l"] = $this->viewData["talla"] === "L" ? "checked" : "";
