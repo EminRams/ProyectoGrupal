@@ -12,31 +12,29 @@ use Dao\Table;
 
 class Prendas extends Table
 {
-  public static function insert(string $nombre,): int
+  public static function insert(string $nombre, string $estado): int
   {
-    $sqlstr = "INSERT INTO prendas (
-          `nombre`
-        ) values (
-          :nombre
-        );";
+    $sqlstr = "INSERT INTO prendas (nombre, estado) values (:nombre, :estado);";
 
     $rowsInserted = self::executeNonQuery(
       $sqlstr,
       array(
         'nombre' => $nombre,
-      )
+        'estado' => $estado,
+        )
     );
     return $rowsInserted;
   }
 
-  public static function update(string $nombre, int $id_prenda): int
+  public static function update(string $nombre, string $estado, int $id_prenda): int
   {
-    $sqlstr = "UPDATE prendas SET `nombre` = :nombre WHERE `id_prenda` = :id_prenda;";
+    $sqlstr = "UPDATE prendas SET nombre = :nombre, estado = :estado WHERE `id_prenda` = :id_prenda;";
 
     $rowsUpdated = self::executeNonQuery(
       $sqlstr,
       array(
         'nombre' => $nombre,
+        'estado' => $estado,
         'id_prenda' => $id_prenda,
       )
     );

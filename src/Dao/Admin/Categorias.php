@@ -12,33 +12,31 @@ use Dao\Table;
 
 class Categorias extends Table
 {
-  public static function insert(string $nombre,): int
+  public static function insert(string $nombre, string $estado): int
   {
-    $sqlstr = "INSERT INTO categorias (
-          `nombre`
-        ) values (
-          :nombre
-        );";
+    $sqlstr = "INSERT INTO categorias (nombre, estado) values (:nombre, :estado);";
 
     $rowsInserted = self::executeNonQuery(
       $sqlstr,
       array(
         'nombre' => $nombre,
-      )
+        'estado' => $estado,
+        )
     );
     return $rowsInserted;
   }
 
-  public static function update(string $nombre, int $id_categoria): int
+  public static function update(string $nombre, string $estado, int $id_categoria): int
   {
-    $sqlstr = "UPDATE categorias SET `nombre` = :nombre WHERE `id_categoria` = :id_categoria;";
+    $sqlstr = "UPDATE categorias SET nombre = :nombre, estado = :estado WHERE `id_categoria` = :id_categoria;";
 
     $rowsUpdated = self::executeNonQuery(
       $sqlstr,
       array(
         'nombre' => $nombre,
+        'estado' => $estado,
         'id_categoria' => $id_categoria,
-      )
+        ) 
     );
     return $rowsUpdated;
   }
