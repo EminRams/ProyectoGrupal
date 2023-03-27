@@ -19,7 +19,7 @@
             <div class="col-sm-4">
               {{if new_enabled}}
               <a id="btnAdd" class="btn btn-info mb-2">
-                <i class="mdi mdi-plus-circle me-2"></i> Add Products</a>
+                <i class="mdi mdi-plus-circle me-2"></i>Agregar</a>
               {{endif new_enabled}}
             </div>
             <div class="col-sm-8">
