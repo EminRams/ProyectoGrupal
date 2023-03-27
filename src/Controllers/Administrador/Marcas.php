@@ -20,12 +20,16 @@ class Marcas extends PublicController
     public function run(): void
     {
         // code
-        $viewData = array();
-        // $viewData["Productos"] = DaoProductos::getAll();
-        error_log(json_encode($viewData));
+        $viewData = array(
+            "edit_enabled" => true,
+            "delete_enabled" => true,
+            "new_enabled" => true
+        );
+        $viewData["marcas"] = \Dao\Admin\Marcas::findAll();
 
         Renderer::render('administrador/marcas', $viewData);
     }
 }
 
 ?>
+

@@ -40,7 +40,7 @@
         <div class="col-md-3 col-lg-6">
           <div class="input-group mb-3 col-sm-3">
             <label class="input-group-text" for="categoria">Categoría</label>
-            <select class="form-select" id="id_categoria" name="id_categoria">
+            <select class="form-select" id="id_categoria" name="id_categoria" {{disabled}}>
               <option selected=""></option>
               {{foreach categorias}}
               <option value="{{value}}" {{selected}}>{{text}}</option>
@@ -52,7 +52,7 @@
         <div class="col-md-3 col-lg-6">
           <div class="input-group mb-3 col-sm-3">
             <label class="input-group-text" for="marca">Marca</label>
-            <select class="form-select" id="id_marca" name="id_marca">
+            <select class="form-select" id="id_marca" name="id_marca" {{disabled}}>
               <option selected=""></option>
               {{foreach marcas}}
               <option value="{{value}}" {{selected}}>{{text}}</option>
@@ -64,7 +64,7 @@
         <div class="col-md-3 col-lg-6">
           <div class="input-group mb-3 col-md-4 col-lg-3">
             <label class="input-group-text" for="prenda">Prenda</label>
-            <select class="form-select" id="id_prenda" name="id_prenda">
+            <select class="form-select" id="id_prenda" name="id_prenda" {{disabled}}>
               <option selected=""></option>
               {{foreach prendas}}
               <option value="{{value}}" {{selected}}>{{text}}</option>
@@ -76,7 +76,7 @@
         <div class="col-md-3 col-lg-6">
           <div class="input-group mb-3 col-md-4 col-lg-3">
             <label class="input-group-text" for="color">Color</label>
-            <select class="form-select" id="id_color" name="id_color">
+            <select class="form-select" id="id_color" name="id_color" {{disabled}}>
               <option selected=""></option>
               {{foreach colores}}
               <option value="{{value}}" {{selected}}>{{text}}</option>
@@ -88,58 +88,62 @@
         <div class="row">
           <!--Talla-->
           <div class="col-6">
-            <div class="row">
+            <div class="row border border-top-0 border-indigo">
               <label class="input-group-text mb-2" for="talla">Talla</label>
               <div class="form-check mb-2 col-lg-3 col-md-4">
                 <div class="form-check">
-                  <input type="radio" id="talla" name="talla" class="form-check-input" value="S" style="border:1px solid var(--bs-indigo);" {{talla_s}}/>
+                  <input type="radio" id="talla" name="talla" class="form-check-input" value="S" style="border:1px solid var(--bs-indigo);" {{talla_s}} {{disabled}}/>
                   <label class="form-check-label" for="talla">S</label>
                 </div>
                 <div class="form-check">
                   <input type="radio" id="talla" name="talla" class="form-check-input" value="M"  
-                    style="border:1px solid var(--bs-indigo);"  {{talla_m}}/>
+                    style="border:1px solid var(--bs-indigo);"  {{talla_m}} {{disabled}}/>
                   <label class="form-check-label" for="talla">M</label>
                 </div>
                 <div class="form-check">
                   <input type="radio" id="talla" name="talla" class="form-check-input" value="L"  
-                    style="border:1px solid var(--bs-indigo);"  {{talla_l}}/>
+                    style="border:1px solid var(--bs-indigo);"  {{talla_l}} {{disabled}}/>
                   <label class="form-check-label" for="talla">L</label>
                 </div>
               </div>
               <div class="form-check mb-2 col-lg-3 col-md-4">
                 <div class="form-check">
                   <input type="radio" id="talla" name="talla" class="form-check-input" value="XL"  
-                    style="border:1px solid var(--bs-indigo);"  {{talla_xl}}/>
+                    style="border:1px solid var(--bs-indigo);"  {{talla_xl}} {{disabled}}/>
                   <label class="form-check-label" for="talla">XL</label>
                 </div>
                 <div class="form-check">
                   <input type="radio" id="talla" name="talla" class="form-check-input" value="XXL"  
-                    style="border:1px solid var(--bs-indigo);"  {{talla_xxl}}/>
+                    style="border:1px solid var(--bs-indigo);"  {{talla_xxl}} {{disabled}}/>
                   <label class="form-check-label" for="talla">XXL</label>
                 </div>
                 <div class="form-check">
                   <input type="radio" id="talla" name="talla" class="form-check-input" value="XXXL"  
-                    style="border:1px solid var(--bs-indigo);"  {{talla_xxxl}}/>
+                    style="border:1px solid var(--bs-indigo);"  {{talla_xxxl}} {{disabled}}/>
                   <label class="form-check-label" for="talla">XXXL</label>
                 </div>
               </div>
             </div>
           </div>
 
-
+          <!-- espacio -->
+          
+          
           <!--Estado-->
           <div class="col-6">
-            <label class="input-group-text mb-2" for="categoria">Estado</label>
-            <div class="form-check mb-2 col-lg-1 col-md-4">
-              <div class="form-check">
-                <input type="radio" id="estado" name="estado" class="form-check-input" value="ACT"
-                  style="border:1px solid var(--bs-indigo);" {{estado_ACT}}/>
-                <label class="form-check-label" for="estado">Activo</label>
-              </div>
-              <div class="form-check">
-                <input type="radio" id="estado" name="estado" class="form-check-input" value="INA"
-                  style="border:1px solid var(--bs-indigo);" {{estado_INA}}/>
-                <label class="form-check-label" for="estado">Inactivo</label>
+            <div class="border border-top-0 border-indigo">
+              <label class="input-group-text mb-2" for="categoria">Estado</label>
+              <div class="form-check mb-2 col-lg-1 col-md-4">
+                <div class="form-check">
+                  <input type="radio" id="estado" name="estado" class="form-check-input" value="ACT"
+                    style="border:1px solid var(--bs-indigo);" {{estado_ACT}} {{disabled}}/>
+                  <label class="form-check-label" for="estado">Activo</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="estado" name="estado" class="form-check-input" value="INA"
+                    style="border:1px solid var(--bs-indigo);" {{estado_INA}} {{disabled}}/>
+                  <label class="form-check-label" for="estado">Inactivo</label>
+                </div>
               </div>
             </div>
           </div>
@@ -149,14 +153,14 @@
           <!--File-->
           <div class="col-sm-6">
             <label class="form-label">File input</label>
-            <input class="form-control" type="file" id="enlace_imagen" name="enlace_imagen" />
+            <input class="form-control" type="file" id="enlace_imagen" name="enlace_imagen" {{disabled}}/>
           </div>
           <!--Descripcion-->
           <div class="col-sm-6">
             <label class="form-label">Descripción del producto</label>
             <div class="form-floating">
               <input class="form-control" placeholder="Agregue una descripción" id="descripcion" name="descripcion"
-                {{nombre}} value="{{descripcion}}" style="height: 100px; resize: none;"></input>
+                {{nombre}} value="{{descripcion}}" style="height: 100px; resize: none;" {{readonly}}></input>
               <label for="floatingTextarea">Descripción</label>
             </div>
           </div>

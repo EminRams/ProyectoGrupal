@@ -90,6 +90,12 @@
                                 <span> Prendas </span>
                             </a>
                         </li>
+                        <li class="side-nav-item">
+                            <a href="index.php?page=administrador_colores" class="side-nav-link">
+                                <i class="mdi mdi-format-paint"></i>
+                                <span> Colores </span>
+                            </a>
+                        </li>
                         
                         <li class="side-nav-item">
                             <a href="index.php?page=administrador_marcas" class="side-nav-link">

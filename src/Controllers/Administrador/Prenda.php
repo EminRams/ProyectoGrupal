@@ -10,7 +10,7 @@ use Controllers\PublicController;
 use Views\Renderer;
 
 
-class Prendas extends PublicController
+class Prenda extends PublicController
 {
     /**
      * Runs the controller
@@ -19,17 +19,14 @@ class Prendas extends PublicController
      */
     public function run(): void
     {
-        // code
-        $viewData = array(
-            "edit_enabled" => true,
-            "delete_enabled" => true,
-            "new_enabled" => true
-        );
-        $viewData["prendas"] = \Dao\Admin\Prendas::findAll();
 
-        Renderer::render('administrador/prendas', $viewData);
+        $viewData = array(
+
+        );
+
+
+        Renderer::render('administrador/prenda', $viewData);
     }
 }
 
 ?>
-

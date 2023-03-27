@@ -10,7 +10,7 @@ use Controllers\PublicController;
 use Views\Renderer;
 
 
-class Prendas extends PublicController
+class Colores extends PublicController
 {
     /**
      * Runs the controller
@@ -25,9 +25,9 @@ class Prendas extends PublicController
             "delete_enabled" => true,
             "new_enabled" => true
         );
-        $viewData["prendas"] = \Dao\Admin\Prendas::findAll();
+        $viewData["colores"] = \Dao\Admin\Colores::findAll();
 
-        Renderer::render('administrador/prendas', $viewData);
+        Renderer::render('administrador/colores', $viewData);
     }
 }
 

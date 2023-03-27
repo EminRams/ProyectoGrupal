@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="page-title-box">
 
-                <h4 class="page-title">Marcas</h4>
+                <h4 class="page-title">Colores</h4>
             </div>
         </div>
     </div>
@@ -43,10 +43,10 @@
                             </thead>
                             <tbody>
 
-                                {{foreach marcas}}
+                                {{foreach colores}}
                                 <tr>
                                     <td>
-                                        {{id_marca}}
+                                        {{id_color}}
                                     </td>
                                     <td>
                                         {{nombre}}
@@ -56,27 +56,27 @@
                                     </td>
                                     <td class="table-action">
                                         <a type="submit" class="action-icon"
-                                            href="index.php?page=administrador_marca&mode=DSP&id_marca={{id_marca}}">
+                                            href="index.php?page=administrador_color&mode=DSP&id_color={{id_color}}">
                                             <i class="mdi mdi-eye"></i>
                                         </a>
 
                                         {{if ~edit_enabled}}
                                         <a type="submit" class="action-icon"
-                                            href="index.php?page=administrador_marca&mode=UPD&id_marca={{id_marca}}">
+                                            href="index.php?page=administrador_color&mode=UPD&id_color={{id_color}}">
                                             <i class="mdi mdi-square-edit-outline"></i>
                                         </a>
                                         {{endif ~edit_enabled}}
 
                                         {{if ~delete_enabled}}
                                         <a type="submit" class="action-icon"
-                                            href="index.php?page=administrador_marca&mode=DEL&id_marca={{id_marca}}">
+                                            href="index.php?page=administrador_color&mode=DEL&id_color={{id_color}}">
                                             <i class="mdi mdi-delete"></i>
                                         </a>
                                         {{endif ~delete_enabled}}
 
                                     </td>
                                 </tr>
-                                {{endfor marcas}}
+                                {{endfor colores}}
 
 
                             </tbody>
@@ -95,7 +95,7 @@
         document.getElementById("btnAdd").addEventListener("click", function (e) {
             e.preventDefault();
             e.stopPropagation();
-            window.location.assign("index.php?page=administrador_marca&mode=INS&id_marcas=0");
+            window.location.assign("index.php?page=administrador_color&mode=INS&id_color=0");
         });
     });
 </script>
