@@ -6,7 +6,7 @@ use Controllers\PublicController;
 use Exception;
 use Views\Renderer;
 
-class Prenda extends PublicController
+class Prenda extends PublicController 
 {
   private $redirectTo = "index.php?page=administrador_prendas";
   private $viewData = array(

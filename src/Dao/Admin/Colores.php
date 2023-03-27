@@ -11,31 +11,35 @@ use Dao\Table;
 
 class Colores extends Table
 {
-  public static function insert(string $nombre): int
+  public static function insert(string $nombre, string $estado): int
   {
     $sqlstr = "INSERT INTO colores (
-          `nombre`
+          `nombre`,
+          `estado`
         ) VALUES (
-          :nombre
+          :nombre,
+          :estado
         );";
 
     $rowsInserted = self::executeNonQuery(
       $sqlstr,
       array(
         'nombre' => $nombre,
+        'estado' => $estado
       )
     );
     return $rowsInserted;
   }
 
-  public static function update(string $nombre, int $id_color): int
+  public static function update(string $nombre, string $estado, int $id_color): int
   {
-    $sqlstr = "UPDATE colores SET `nombre` = :nombre WHERE `id_color` = :id_color;";
+    $sqlstr = "UPDATE colores SET `nombre` = :nombre, `estado` = :estado WHERE `id_color` = :id_color;";
 
     $rowsUpdated = self::executeNonQuery(
       $sqlstr,
       array(
         'nombre' => $nombre,
+        'estado' => $estado,
         'id_color' => $id_color,
       )
     );
