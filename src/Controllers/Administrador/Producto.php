@@ -45,7 +45,6 @@ class Producto extends PublicController
     "has_errors" => false,
     "show_action" => true,
     "readonly" => false,
-    "disabled" => false,
     "xssToken" => "",
   );
 
@@ -330,7 +329,6 @@ class Producto extends PublicController
       );
       if (in_array($this->viewData["mode"], array("DSP", "DEL"))) {
         $this->viewData["readonly"] = "readonly";
-        $this->viewData["disabled"] = "disabled";
       }
 
       if ($this->viewData['talla']) {
