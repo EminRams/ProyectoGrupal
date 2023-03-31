@@ -2,9 +2,11 @@
 
 namespace Utilities;
 
-class Nav {
+class Nav
+{
 
-    public static function setNavContext(){
+    public static function setNavContext()
+    {
         $tmpNAVIGATION = array();
         $userID = \Utilities\Security::getUserId();
         if (\Utilities\Security::isAuthorized($userID, "Menu_MntUsuarios")) {
@@ -26,17 +28,24 @@ class Nav {
                 "nav_label" => "Pagar"
             );
         }
+
+        if (\Utilities\Security::isAuthorized($userID, "Menu_AdmProductos")) {
+            $tmpNAVIGATION[] = array(
+                "nav_url" => "index.php?page=Administrador_Productos",
+                "nav_label" => "Productos"
+            );
+        }
         \Utilities\Context::setContext("NAVIGATION", $tmpNAVIGATION);
     }
 
 
     private function __construct()
     {
-        
+
     }
     private function __clone()
     {
-        
+
     }
 }
 ?>
