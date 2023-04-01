@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Register | El Bulto</title>
+    <title>Registro | El Bulto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
@@ -19,41 +19,87 @@
 
 <body class="loading authentication-bg"
     data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
-    <section class="fullCenter">
-        <form class="grid" method="post" action="index.php?page=seguridad_register">
-            <section class="depth-1 row col-12 col-m-8 offset-m-2 col-xl-6 offset-xl-3">
-                <h1 class="col-12">Crea tu cuenta</h1>
-            </section>
-            <section class="depth-1 py-5 row col-12 col-m-8 offset-m-2 col-xl-6 offset-xl-3">
-                <div class="row">
-                    <label class="col-12 col-m-4 flex align-center" for="txtEmail">Correo Electrónico</label>
-                    <div class="col-12 col-m-8">
-                        <input class="width-full" type="email" id="txtEmail" name="txtEmail" value="{{txtEmail}}" />
-                    </div>
-                    {{if errorEmail}}
-                    <div class="error col-12 py-2 col-m-8 offset-m-4">{{errorEmail}}</div>
-                    {{endif errorEmail}}
-                </div>
-                <div class="row">
-                    <label class="col-12 col-m-4 flex align-center" for="txtPswd">Contraseña</label>
-                    <div class="col-12 col-m-8">
-                        <input class="width-full" type="password" id="txtPswd" name="txtPswd" value="{{txtPswd}}" />
-                    </div>
-                    {{if errorPswd}}
-                    <div class="error col-12 py-2 col-m-8 offset-m-4">{{errorPswd}}</div>
-                    {{endif errorPswd}}
-                </div>
-                <div class="row right flex-end px-4">
-                    <button class="primary" id="btnSignin" type="submit">Crear Cuenta</button>
-                </div>
-            </section>
-        </form>
-    </section>
 
+    <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xxl-4 col-lg-5">
+                    <div class="card">
+                        <!-- Logo-->
+                        <div class="card-header pt-4 pb-4 text-center bg-primary">
+                            <a href="index.html">
+                                <span><img src="/{{BASE_DIR}}/public/images/logo.png" alt="" height="18"></span>
+                            </a>
+                        </div>
+
+                        <div class="card-body p-4">
+
+                            <div class="text-center w-75 m-auto">
+                                <h4 class="text-dark-50 text-center mt-0 fw-bold">Free Sign Up</h4>
+                                <p class="text-muted mb-4">Don't have an account? Create your account, it takes less
+                                    than a minute </p>
+                            </div>
+
+                            <form method="post" action="index.php?page=seguridad_register">
+
+                                <div class="mb-3">
+                                    <label for="fullname" class="form-label">Full Name</label>
+                                    <input class="form-control" type="text" id="fullname" placeholder="Enter your name"
+                                        required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="txtEmail" class="form-label">Email address</label>
+                                    <input class="form-control" type="email" id="txtEmail" name="txtEmail"
+                                        value="{{txtEmail}}" required placeholder="Ingrese su correo">
+                                </div>
+                                {{if errorEmail}}
+                                <div class="error col-12 py-2 col-m-8 offset-m-4">{{errorEmail}}</div>
+                                {{endif errorEmail}}
+
+                                <div class="mb-3">
+                                    <label for="txtPswd" class="form-label">Password</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="password" id="txtPswd" class="form-control"
+                                            placeholder="Ingrese su contraseña" name="txtPswd" value="{{txtPswd}}">
+                                        <div class="input-group-text" data-password="false">
+                                            <span class="password-eye"></span>
+                                        </div>
+                                    </div>
+                                    {{if errorPswd}}
+                                    <div class="error col-12 py-2 col-m-8 offset-m-4">{{errorPswd}}</div>
+                                    {{endif errorPswd}}
+                                </div>
+
+
+
+                                <div class="mb-3 text-center">
+                                    <button class="btn btn-primary" type="submit" id="btnSignin"> Crear cuenta </button>
+                                </div>
+
+                            </form>
+                        </div> <!-- end card-body -->
+                    </div>
+                    <!-- end card -->
+
+                    <div class="row mt-3">
+                        <div class="col-12 text-center">
+                            <p class="text-muted">Already have account? <a href="pages-login.html"
+                                    class="text-muted ms-1"><b>Log In</b></a></p>
+                        </div> <!-- end col-->
+                    </div>
+                    <!-- end row -->
+
+                </div> <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
     <!-- end page -->
 
     <footer class="footer footer-alt">
-        2018 - 2021 © Hyper - Coderthemes.com
+        2023 © El Bulto
     </footer>
 
     <!-- bundle -->
