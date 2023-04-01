@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Landing Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>Landing Page | El Bulto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
@@ -25,7 +25,7 @@
 
             <!-- logo -->
             <a href="index.html" class="navbar-brand me-lg-5">
-                <img src="/{{BASE_DIR}}/public/images/logo.png" alt="" class="logo-dark" height="18">
+                <img src="/{{BASE_DIR}}/public/images/logo.png" alt="" class="logo-dark" height="100">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -614,7 +614,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <img src="/{{BASE_DIR}}/public/images/logo.png" alt="" class="logo-dark" height="18">
+                    <img src="/{{BASE_DIR}}/public/images/logo.png" alt="" class="logo-dark" height="100">
                     <p class="text-muted mt-4">Hyper makes it easier to build better websites with
                         <br> great speed. Save hundreds of hours of design
                         <br> and development by using it.
