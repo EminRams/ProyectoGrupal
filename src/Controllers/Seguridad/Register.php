@@ -14,6 +14,7 @@ use Views\Renderer;
 class Register extends PublicController
 {
     private $txtEmail = "";
+    private $txtNombre = "";
     private $txtPswd = "";
     private $errorEmail = "";
     private $errorPswd = "";
@@ -23,6 +24,7 @@ class Register extends PublicController
         if ($this->isPostBack()) {
             $this->txtEmail = $_POST["txtEmail"];
             $this->txtPswd = $_POST["txtPswd"];
+            $this->txtNombre = $_POST["txtNombre"];
             //validaciones
             if (!(Validators::IsValidEmail($this->txtEmail))) {
                 $this->errorEmail = "El correo no tiene el formato adecuado";
@@ -35,7 +37,7 @@ class Register extends PublicController
 
             if (!$this->hasErrors) {
                 try {
-                    if (\Dao\Security\Security::newUsuario($this->txtEmail, $this->txtPswd)) {
+                    if (\Dao\Security\Security::newUsuario($this->txtEmail, $this->txtPswd, $this->txtNombre)) {
                         \Utilities\Site::redirectToWithMsg("index.php?page=seguridad_login", "¡Usuario Registrado Satisfactoriamente!");
                     }
                 } catch (Error $ex) {

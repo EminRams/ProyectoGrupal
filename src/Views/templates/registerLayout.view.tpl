@@ -28,28 +28,28 @@
                         <!-- Logo-->
                         <div class="card-header pt-4 pb-4 text-center bg-primary">
                             <a href="index.html">
-                                <span><img src="/{{BASE_DIR}}/public/images/logo.png" alt="" height="18"></span>
+                                <span><img src="/{{BASE_DIR}}/public/images/logo.png" alt="" height="100"></span>
                             </a>
                         </div>
 
                         <div class="card-body p-4">
 
                             <div class="text-center w-75 m-auto">
-                                <h4 class="text-dark-50 text-center mt-0 fw-bold">Free Sign Up</h4>
-                                <p class="text-muted mb-4">Don't have an account? Create your account, it takes less
-                                    than a minute </p>
+                                <h4 class="text-dark-50 text-center mt-0 fw-bold">Crea tu cuenta gratis</h4>
+                                <p class="text-muted mb-4">¿No tienes una cuenta? Crea tu cuenta en menos de un minuto
+                                </p>
                             </div>
 
                             <form method="post" action="index.php?page=seguridad_register">
 
                                 <div class="mb-3">
-                                    <label for="fullname" class="form-label">Full Name</label>
-                                    <input class="form-control" type="text" id="fullname" placeholder="Enter your name"
-                                        required>
+                                    <label for="txtNombre" class="form-label">Nombre Completo</label>
+                                    <input class="form-control" type="text" id="txtNombre" name="txtNombre"
+                                        value="{{txtNombre}}" placeholder="Ingrese su nombre" required>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="txtEmail" class="form-label">Email address</label>
+                                    <label for="txtEmail" class="form-label">Correo Electrónico</label>
                                     <input class="form-control" type="email" id="txtEmail" name="txtEmail"
                                         value="{{txtEmail}}" required placeholder="Ingrese su correo">
                                 </div>
@@ -58,7 +58,7 @@
                                 {{endif errorEmail}}
 
                                 <div class="mb-3">
-                                    <label for="txtPswd" class="form-label">Password</label>
+                                    <label for="txtPswd" class="form-label">Contraseña</label>
                                     <div class="input-group input-group-merge">
                                         <input type="password" id="txtPswd" class="form-control"
                                             placeholder="Ingrese su contraseña" name="txtPswd" value="{{txtPswd}}">

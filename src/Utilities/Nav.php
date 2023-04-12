@@ -35,6 +35,14 @@ class Nav
                 "nav_label" => "Productos"
             );
         }
+
+        if (\Utilities\Security::isAuthorized($userID, "Menu_AdmCategorias")) {
+            $tmpNAVIGATION[] = array(
+                "nav_url" => "index.php?page=Administrador_Categorias",
+                "nav_label" => "Categorías"
+            );
+        }
+
         \Utilities\Context::setContext("NAVIGATION", $tmpNAVIGATION);
     }
 
