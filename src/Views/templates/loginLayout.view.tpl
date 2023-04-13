@@ -28,7 +28,7 @@
                         <!-- Logo -->
                         <div class="card-header pt-4 pb-4 text-center bg-primary">
                             <a href="index.html">
-                                <span><img src="/{{BASE_DIR}}/public/images/logo.png" alt="" height="18"></span>
+                                <span><img src="/{{BASE_DIR}}/public/images/logo.png" alt="" height="100"></span>
                             </a>
                         </div>
 
@@ -40,36 +40,41 @@
                                 </p>
                             </div>
 
-                            <form action="#">
+                            <form method="post"
+                                action="index.php?page=seguridad_login{{if redirto}}&redirto={{redirto}}{{endif redirto}}">
 
                                 <div class="mb-3">
                                     <label for="emailaddress" class="form-label">Correo electrónico</label>
-                                    <input class="form-control" type="email" id="emailaddress" required=""
-                                        placeholder="Ingrese su correo">
+                                    <input class="form-control" type="email" id="txtEmail" required="" name="txtEmail"
+                                        placeholder="Ingrese su correo" value="{{txtEmail}}">
                                 </div>
-
+                                {{if errorEmail}}
+                                <div class="error col-12 py-2 col-m-8 offset-m-4">{{errorEmail}}</div>
+                                {{endif errorEmail}}
                                 <div class="mb-3">
                                     <a href="pages-recoverpw.html" class="text-muted float-end"><small>¿Olvidaste tu
                                             contraseña?</small></a>
                                     <label for="password" class="form-label">Contraseña</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="password" id="password" class="form-control"
-                                            placeholder="Ingrese su contraseña">
+                                        <input type="password" id="txtPswd" class="form-control"
+                                            placeholder="Ingrese su contraseña" name="txtPswd" value="{{txtPswd}}">
                                         <div class="input-group-text" data-password="false">
                                             <span class="password-eye"></span>
                                         </div>
                                     </div>
                                 </div>
+                                {{if errorPswd}}
+                                <div class="error col-12 py-2 col-m-8 offset-m-4">{{errorPswd}}</div>
+                                {{endif errorPswd}}
 
-                                <div class="mb-3 mb-3">
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="checkbox-signin" checked>
-                                        <label class="form-check-label" for="checkbox-signin">Recuérdame</label>
-                                    </div>
+                                {{if generalError}}
+                                <div class="row">
+                                    {{generalError}}
                                 </div>
-
+                                {{endif generalError}}
                                 <div class="mb-3 mb-0 text-center">
-                                    <button class="btn btn-primary" type="submit"> Iniciar sesión </button>
+                                    <button class="btn btn-primary" type="submit" id="btnLogin"> Iniciar sesión
+                                    </button>
                                 </div>
 
                             </form>

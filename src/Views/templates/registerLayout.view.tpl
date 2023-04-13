@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Register | El Bulto</title>
+    <title>Registro | El Bulto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
@@ -23,82 +23,58 @@
     <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-xxl-8 col-lg-8">
+                <div class="col-xxl-4 col-lg-5">
                     <div class="card">
                         <!-- Logo-->
                         <div class="card-header pt-4 pb-4 text-center bg-primary">
                             <a href="index.html">
-                                <span><img src="/{{BASE_DIR}}/public/images/logo.png" alt="" height="18"></span>
+                                <span><img src="/{{BASE_DIR}}/public/images/logo.png" alt="" height="100"></span>
                             </a>
                         </div>
 
                         <div class="card-body p-4">
 
                             <div class="text-center w-75 m-auto">
-                                <h4 class="text-dark-50 text-center mt-0 fw-bold">Crear cuenta</h4>
+                                <h4 class="text-dark-50 text-center mt-0 fw-bold">Crea tu cuenta gratis</h4>
                                 <p class="text-muted mb-4">¿No tienes una cuenta? Crea tu cuenta en menos de un minuto
                                 </p>
                             </div>
 
-                            <form class="row" action="#">                            
-                                <div class="mb-3 col-6">
-                                    <label for="nombre" class="form-label">Nombre</label>
-                                    <input class="form-control" type="text" id="nombre" placeholder="Ingrese su nombre"
-                                        required>
-                                </div>
-                                <div class="mb-3 col-6">
-                                    <label for="apellido" class="form-label">Apellido</label>
-                                    <input class="form-control" type="text" id="apellido"
-                                        placeholder="Ingrese su apellido" required>
-                                </div>
-                                
-                                <div class="mb-3 col-6">
-                                    <label for="correo_electronico" class="form-label">Correo electrónico</label>
-                                    <input class="form-control" type="email" id="correo_electronico" required
-                                        placeholder="Ingrese su correo electrónico">
-                                </div>
+                            <form method="post" action="index.php?page=seguridad_register">
 
-                                <div class="mb-3 col-6">
-                                    <label for="telefono" class="form-label">Teléfono</label>
-                                    <input class="form-control" type="text" id="telefono" required
-                                        placeholder="Ingrese su número de teléfono">
-                                </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Dirección</label>
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Agregue una descripción"
-                                            id="floatingTextarea" style="height: 100px; resize: none;"></textarea>
-                                        <label for="floatingTextarea">Ingrese dirección del domicilio</label>
-                                    </div>
+                                    <label for="txtNombre" class="form-label">Nombre Completo</label>
+                                    <input class="form-control" type="text" id="txtNombre" name="txtNombre"
+                                        value="{{txtNombre}}" placeholder="Ingrese su nombre" required>
                                 </div>
 
-                                <div class="mb-3 col-6">
-                                    <label for="nombre" class="form-label">Usuario</label>
-                                    <input class="form-control" type="text" id="nombre"
-                                        placeholder="Ingrese su nombre de usuario" required>
+                                <div class="mb-3">
+                                    <label for="txtEmail" class="form-label">Correo Electrónico</label>
+                                    <input class="form-control" type="email" id="txtEmail" name="txtEmail"
+                                        value="{{txtEmail}}" required placeholder="Ingrese su correo">
                                 </div>
+                                {{if errorEmail}}
+                                <div class="error col-12 py-2 col-m-8 offset-m-4">{{errorEmail}}</div>
+                                {{endif errorEmail}}
 
-                                <div class="mb-3 col-6">
-                                    <label for="contrasenia" class="form-label">Contraseña</label>
+                                <div class="mb-3">
+                                    <label for="txtPswd" class="form-label">Contraseña</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="password" id="contrasenia" class="form-control"
-                                            placeholder="Ingrese su contraseña">
+                                        <input type="password" id="txtPswd" class="form-control"
+                                            placeholder="Ingrese su contraseña" name="txtPswd" value="{{txtPswd}}">
                                         <div class="input-group-text" data-password="false">
                                             <span class="password-eye"></span>
                                         </div>
                                     </div>
+                                    {{if errorPswd}}
+                                    <div class="error col-12 py-2 col-m-8 offset-m-4">{{errorPswd}}</div>
+                                    {{endif errorPswd}}
                                 </div>
 
-                                <div class="mb-3">
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="checkbox-signup">
-                                        <label class="form-check-label" for="checkbox-signup">Acepto <a href="#"
-                                                class="text-muted">Los Términos y Condiciones</a></label>
-                                    </div>
-                                </div>
+
 
                                 <div class="mb-3 text-center">
-                                    <button class="btn btn-primary" type="submit"> Registrarse </button>
+                                    <button class="btn btn-primary" type="submit" id="btnSignin"> Crear cuenta </button>
                                 </div>
 
                             </form>
@@ -108,8 +84,8 @@
 
                     <div class="row mt-3">
                         <div class="col-12 text-center">
-                            <p class="text-muted">¿Ya estás registrado? <a href="index.php?page=seguridad_login"
-                                    class="text-muted ms-1"><b>Iniciar sesión</b></a></p>
+                            <p class="text-muted">Already have account? <a href="pages-login.html"
+                                    class="text-muted ms-1"><b>Log In</b></a></p>
                         </div> <!-- end col-->
                     </div>
                     <!-- end row -->
@@ -123,7 +99,7 @@
     <!-- end page -->
 
     <footer class="footer footer-alt">
-        2018 - 2021 © Hyper - Coderthemes.com
+        2023 © El Bulto
     </footer>
 
     <!-- bundle -->
