@@ -2,13 +2,14 @@
 
 namespace Controllers\Administrador;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
-class Producto extends PublicController
+class Producto extends PrivateController
 {
   private $redirectTo = "index.php?page=administrador_productos";
+
   private $viewData = array(
     "mode" => "DSP",
     "modedsc" => "",
@@ -45,9 +46,9 @@ class Producto extends PublicController
     "has_errors" => false,
     "show_action" => true,
     "readonly" => false,
+    "disabled" => false,
     "xssToken" => "",
   );
-
 
   private $modes = array(
     "DSP" => "Detalle de %s (%s)",
@@ -55,6 +56,14 @@ class Producto extends PublicController
     "UPD" => "Editar %s (%s)",
     "DEL" => "Borrar %s (%s)"
   );
+
+  private $modeAuth = array(
+    "DSP" => "Admin_Categoria_view",
+    "INS" => "Admin_Categoria_new",
+    "UPD" => "Admin_Categoria_edit",
+    "DEL" => "Admin_Categoria_delete"
+  );
+
   public function run(): void
   {
     try {
@@ -75,10 +84,14 @@ class Producto extends PublicController
       );
     }
   }
+
   private function page_loaded()
   {
     if (isset($_GET['mode'])) {
       if (isset($this->modes[$_GET['mode']])) {
+        if (!$this->isFeatureAutorized($this->modeAuth[$_GET['mode']])) {
+          throw new Exception('Acceso ' . $_GET['mode'] . ' no permitido');
+        }
         $this->viewData["mode"] = $_GET['mode'];
       } else {
         throw new Exception("Mode Not available");
@@ -94,6 +107,7 @@ class Producto extends PublicController
       }
     }
   }
+
   private function validatePostData()
   {
     if (isset($_POST["xssToken"])) {
@@ -240,6 +254,7 @@ class Producto extends PublicController
       $this->viewData["estado"] = $_POST["estado"];
     }
   }
+
   private function executeAction()
   {
     switch ($this->viewData["mode"]) {
@@ -299,6 +314,7 @@ class Producto extends PublicController
         break;
     }
   }
+
   private function render()
   {
     $xssToken = md5("PRODUCTO" . rand(0, 4000) * rand(5000, 9999));
@@ -329,6 +345,7 @@ class Producto extends PublicController
       );
       if (in_array($this->viewData["mode"], array("DSP", "DEL"))) {
         $this->viewData["readonly"] = "readonly";
+        $this->viewData["disabled"] = "disabled";
       }
 
       if ($this->viewData['talla']) {

@@ -5,12 +5,12 @@ namespace Controllers\Administrador;
 // ---------------------------------------------------------------
 // Sección de imports
 // ---------------------------------------------------------------
-use Controllers\PublicController;
+use Controllers\PrivateController;
 
 use Views\Renderer;
 
 
-class Categorias extends PublicController
+class Categorias extends PrivateController
 {
     /**
      * Runs the controller
@@ -21,9 +21,10 @@ class Categorias extends PublicController
     {
         // code
         $viewData = array(
-            "edit_enabled" => true,
-            "delete_enabled" => true,
-            "new_enabled" => true
+          "edit_enabled"=> $this->isFeatureAutorized('Admin_Categoria_edit'),
+          "delete_enabled"=> $this->isFeatureAutorized('Admin_Categoria_delete'),
+          "new_enabled"=> $this->isFeatureAutorized('Admin_Categoria_new'),
+          "view_enabled"=> $this->isFeatureAutorized('Admin_Categoria_view')
         );
         $viewData["categorias"] = \Dao\Admin\Categorias::findAll();
 

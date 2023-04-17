@@ -5,12 +5,12 @@ namespace Controllers\Administrador;
 // ---------------------------------------------------------------
 // Sección de imports
 // ---------------------------------------------------------------
-use Controllers\PublicController;
+use Controllers\PrivateController;
 
 use Views\Renderer;
 
 
-class Prendas extends PublicController
+class Prendas extends PrivateController
 {
     /**
      * Runs the controller
@@ -21,9 +21,10 @@ class Prendas extends PublicController
     {
         // code
         $viewData = array(
-            "edit_enabled" => true,
-            "delete_enabled" => true,
-            "new_enabled" => true
+          "edit_enabled"=> $this->isFeatureAutorized('Admin_Prenda_edit'),
+          "delete_enabled"=> $this->isFeatureAutorized('Admin_Prenda_delete'),
+          "new_enabled"=> $this->isFeatureAutorized('Admin_Prenda_new'),
+          "view_enabled"=> $this->isFeatureAutorized('Admin_Prenda_view')
         );
         $viewData["prendas"] = \Dao\Admin\Prendas::findAll();
 

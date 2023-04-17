@@ -40,6 +40,3 @@ try {
     $instance->run();
     die();
 }
-
-
-?>

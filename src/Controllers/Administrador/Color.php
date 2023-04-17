@@ -5,14 +5,15 @@ namespace Controllers\Administrador;
 // ---------------------------------------------------------------
 // Sección de imports
 // ---------------------------------------------------------------
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
 
-class Color extends PublicController
+class Color extends PrivateController
 {
   private $redirectTo = "index.php?page=administrador_colores";
+
   private $viewData = array(
     "mode" => "DSP",
     "modedsc" => "",
@@ -30,13 +31,20 @@ class Color extends PublicController
     "xssToken" => "",
   );
 
-
   private $modes = array(
     "DSP" => "Detalle de %s (%s)",
     "INS" => "Nueva color",
     "UPD" => "Editar %s (%s)",
     "DEL" => "Borrar %s (%s)"
   );
+
+  private $modeAuth = array(
+    "DSP" => "Admin_Categoria_view",
+    "INS" => "Admin_Categoria_new",
+    "UPD" => "Admin_Categoria_edit",
+    "DEL" => "Admin_Categoria_delete"
+  );
+
   public function run(): void
   {
     try {
@@ -61,6 +69,9 @@ class Color extends PublicController
   {
     if (isset($_GET['mode'])) {
       if (isset($this->modes[$_GET['mode']])) {
+        if (!$this->isFeatureAutorized($this->modeAuth[$_GET['mode']])) {
+          throw new Exception('Acceso ' . $_GET['mode'] . ' no permitido');
+        }
         $this->viewData["mode"] = $_GET['mode'];
       } else {
         throw new Exception("Mode Not available");
@@ -76,6 +87,7 @@ class Color extends PublicController
       }
     }
   }
+
   private function validatePostData()
   {
     if (isset($_POST["xssToken"])) {
@@ -102,7 +114,7 @@ class Color extends PublicController
     } else {
       throw new Exception("id_color not present in form");
     }
-    
+
     // NOMBRE Colores
     if (isset($_POST["nombre"])) {
       if (\Utilities\Validators::IsEmpty($_POST["nombre"])) {
@@ -149,9 +161,9 @@ class Color extends PublicController
         break;
       case "UPD":
         $updated = \Dao\Admin\Colores::update(
-            $this->viewData["nombre"],
-            $this->viewData["estado"],
-            $this->viewData["id_color"],
+          $this->viewData["nombre"],
+          $this->viewData["estado"],
+          $this->viewData["id_color"],
         );
         if ($updated > 0) {
           \Utilities\Site::redirectToWithMsg(
@@ -173,6 +185,7 @@ class Color extends PublicController
         break;
     }
   }
+
   private function render()
   {
     $xssToken = md5("COLOR" . rand(0, 4000) * rand(5000, 9999));
@@ -205,7 +218,6 @@ class Color extends PublicController
         $this->viewData["show_action"] = false;
       }
     }
-    
 
     Renderer::render("administrador/color", $this->viewData);
   }

@@ -2,13 +2,14 @@
 
 namespace Controllers\Administrador;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
-class Categoria extends PublicController
+class Categoria extends PrivateController
 {
   private $redirectTo = "index.php?page=administrador_categorias";
+
   private $viewData = array(
     "mode" => "DSP",
     "modedsc" => "",
@@ -26,13 +27,20 @@ class Categoria extends PublicController
     "xssToken" => "",
   );
 
-
   private $modes = array(
     "DSP" => "Detalle de %s (%s)",
     "INS" => "Nueva Categoria",
     "UPD" => "Editar %s (%s)",
     "DEL" => "Borrar %s (%s)"
   );
+
+  private $modeAuth = array(
+    "DSP" => "Admin_Categoria_view",
+    "INS" => "Admin_Categoria_new",
+    "UPD" => "Admin_Categoria_edit",
+    "DEL" => "Admin_Categoria_delete"
+  );
+
   public function run(): void
   {
     try {
@@ -53,10 +61,14 @@ class Categoria extends PublicController
       );
     }
   }
+
   private function page_loaded()
   {
     if (isset($_GET['mode'])) {
       if (isset($this->modes[$_GET['mode']])) {
+        if (!$this->isFeatureAutorized($this->modeAuth[$_GET['mode']])) {
+          throw new Exception('Acceso ' . $_GET['mode'] . ' no permitido');
+        }
         $this->viewData["mode"] = $_GET['mode'];
       } else {
         throw new Exception("Mode Not available");
@@ -72,6 +84,7 @@ class Categoria extends PublicController
       }
     }
   }
+
   private function validatePostData()
   {
     if (isset($_POST["xssToken"])) {
@@ -98,7 +111,7 @@ class Categoria extends PublicController
     } else {
       throw new Exception("id_categoria not present in form");
     }
-    
+
     // NOMBRE CATEGORIA
     if (isset($_POST["nombre"])) {
       if (\Utilities\Validators::IsEmpty($_POST["nombre"])) {
@@ -128,6 +141,7 @@ class Categoria extends PublicController
       $this->viewData["estado"] = $_POST["estado"];
     }
   }
+
   private function executeAction()
   {
     switch ($this->viewData["mode"]) {
@@ -145,9 +159,9 @@ class Categoria extends PublicController
         break;
       case "UPD":
         $updated = \Dao\Admin\Categorias::update(
-            $this->viewData["nombre"],
-            $this->viewData["estado"],
-            $this->viewData["id_categoria"],
+          $this->viewData["nombre"],
+          $this->viewData["estado"],
+          $this->viewData["id_categoria"],
         );
         if ($updated > 0) {
           \Utilities\Site::redirectToWithMsg(
@@ -169,6 +183,7 @@ class Categoria extends PublicController
         break;
     }
   }
+
   private function render()
   {
     $xssToken = md5("CATEGORIA" . rand(0, 4000) * rand(5000, 9999));
@@ -201,7 +216,7 @@ class Categoria extends PublicController
         $this->viewData["show_action"] = false;
       }
     }
-    
+
 
     Renderer::render("administrador/categoria", $this->viewData);
   }

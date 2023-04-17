@@ -2,11 +2,11 @@
 
 namespace Controllers\Administrador;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
-class Prenda extends PublicController 
+class Prenda extends PrivateController
 {
   private $redirectTo = "index.php?page=administrador_prendas";
   private $viewData = array(
@@ -26,13 +26,20 @@ class Prenda extends PublicController
     "xssToken" => "",
   );
 
-
   private $modes = array(
     "DSP" => "Detalle de %s (%s)",
     "INS" => "Nueva Prenda",
     "UPD" => "Editar %s (%s)",
     "DEL" => "Borrar %s (%s)"
   );
+
+  private $modeAuth = array(
+    "DSP" => "Admin_Categoria_view",
+    "INS" => "Admin_Categoria_new",
+    "UPD" => "Admin_Categoria_edit",
+    "DEL" => "Admin_Categoria_delete"
+  );
+
   public function run(): void
   {
     try {
@@ -53,10 +60,14 @@ class Prenda extends PublicController
       );
     }
   }
+
   private function page_loaded()
   {
     if (isset($_GET['mode'])) {
       if (isset($this->modes[$_GET['mode']])) {
+        if (!$this->isFeatureAutorized($this->modeAuth[$_GET['mode']])) {
+          throw new Exception('Acceso ' . $_GET['mode'] . ' no permitido');
+        }
         $this->viewData["mode"] = $_GET['mode'];
       } else {
         throw new Exception("Mode Not available");
@@ -72,6 +83,7 @@ class Prenda extends PublicController
       }
     }
   }
+
   private function validatePostData()
   {
     if (isset($_POST["xssToken"])) {
@@ -98,7 +110,7 @@ class Prenda extends PublicController
     } else {
       throw new Exception("id_prenda not present in form");
     }
-    
+
     // NOMBRE PRENDA
     if (isset($_POST["nombre"])) {
       if (\Utilities\Validators::IsEmpty($_POST["nombre"])) {
@@ -128,6 +140,7 @@ class Prenda extends PublicController
       $this->viewData["estado"] = $_POST["estado"];
     }
   }
+
   private function executeAction()
   {
     switch ($this->viewData["mode"]) {
@@ -145,9 +158,9 @@ class Prenda extends PublicController
         break;
       case "UPD":
         $updated = \Dao\Admin\Prendas::update(
-            $this->viewData["nombre"],
-            $this->viewData["estado"],
-            $this->viewData["id_prenda"],
+          $this->viewData["nombre"],
+          $this->viewData["estado"],
+          $this->viewData["id_prenda"],
         );
         if ($updated > 0) {
           \Utilities\Site::redirectToWithMsg(
@@ -169,6 +182,7 @@ class Prenda extends PublicController
         break;
     }
   }
+
   private function render()
   {
     $xssToken = md5("PRENDA" . rand(0, 4000) * rand(5000, 9999));
@@ -201,7 +215,6 @@ class Prenda extends PublicController
         $this->viewData["show_action"] = false;
       }
     }
-    
 
     Renderer::render("administrador/prenda", $this->viewData);
   }

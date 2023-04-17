@@ -5,14 +5,15 @@ namespace Controllers\Administrador;
 // ---------------------------------------------------------------
 // Sección de imports
 // ---------------------------------------------------------------
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Exception;
 use Views\Renderer;
 
 
-class Marca extends PublicController 
+class Marca extends PrivateController
 {
   private $redirectTo = "index.php?page=administrador_marcas";
+
   private $viewData = array(
     "mode" => "DSP",
     "modedsc" => "",
@@ -30,13 +31,20 @@ class Marca extends PublicController
     "xssToken" => "",
   );
 
-
   private $modes = array(
     "DSP" => "Detalle de %s (%s)",
     "INS" => "Nueva Marca",
     "UPD" => "Editar %s (%s)",
     "DEL" => "Borrar %s (%s)"
   );
+
+  private $modeAuth = array(
+    "DSP" => "Admin_Categoria_view",
+    "INS" => "Admin_Categoria_new",
+    "UPD" => "Admin_Categoria_edit",
+    "DEL" => "Admin_Categoria_delete"
+  );
+
   public function run(): void
   {
     try {
@@ -57,10 +65,14 @@ class Marca extends PublicController
       );
     }
   }
+
   private function page_loaded()
   {
     if (isset($_GET['mode'])) {
       if (isset($this->modes[$_GET['mode']])) {
+        if (!$this->isFeatureAutorized($this->modeAuth[$_GET['mode']])) {
+          throw new Exception('Acceso ' . $_GET['mode'] . ' no permitido');
+        }
         $this->viewData["mode"] = $_GET['mode'];
       } else {
         throw new Exception("Mode Not available");
@@ -76,6 +88,7 @@ class Marca extends PublicController
       }
     }
   }
+
   private function validatePostData()
   {
     if (isset($_POST["xssToken"])) {
@@ -102,7 +115,7 @@ class Marca extends PublicController
     } else {
       throw new Exception("id_marca not present in form");
     }
-    
+
     // NOMBRE Marca
     if (isset($_POST["nombre"])) {
       if (\Utilities\Validators::IsEmpty($_POST["nombre"])) {
@@ -132,6 +145,7 @@ class Marca extends PublicController
       $this->viewData["estado"] = $_POST["estado"];
     }
   }
+
   private function executeAction()
   {
     switch ($this->viewData["mode"]) {
@@ -149,9 +163,9 @@ class Marca extends PublicController
         break;
       case "UPD":
         $updated = \Dao\Admin\Marcas::update(
-            $this->viewData["nombre"],
-            $this->viewData["estado"],
-            $this->viewData["id_marca"],
+          $this->viewData["nombre"],
+          $this->viewData["estado"],
+          $this->viewData["id_marca"],
         );
         if ($updated > 0) {
           \Utilities\Site::redirectToWithMsg(
@@ -173,6 +187,7 @@ class Marca extends PublicController
         break;
     }
   }
+
   private function render()
   {
     $xssToken = md5("Marca" . rand(0, 4000) * rand(5000, 9999));
@@ -205,7 +220,6 @@ class Marca extends PublicController
         $this->viewData["show_action"] = false;
       }
     }
-    
 
     Renderer::render("administrador/marca", $this->viewData);
   }
