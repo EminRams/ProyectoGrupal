@@ -239,6 +239,17 @@ class Producto extends PrivateController
       throw new Exception("mode not present in form");
     }
 
+    // if (isset($_FILES["enlace_imagen"])) {
+    //   $img =  $_FILES["enlace_imagen"];
+    //   if ($img['error'] == UPLOAD_ERR_OK) {
+    //     $ruta_temporal = $img['tmp_name'];
+    //     $nombre_archivo = $img['name'];
+    //     $ruta = 'C:\img' . $nombre_archivo;
+    //     move_uploaded_file($ruta_temporal, $ruta);
+    //     $this->viewData["enlace_imagen"] = $ruta;
+    //   }
+    // }
+
     $this->viewData["id_marca"] = $_POST["id_marca"];
     $this->viewData["id_categoria"] = $_POST["id_categoria"];
     $this->viewData["id_prenda"] = $_POST["id_prenda"];
@@ -248,7 +259,7 @@ class Producto extends PrivateController
     $this->viewData["precio"] = $_POST["precio"];
     $this->viewData["stock"] = $_POST["stock"];
     $this->viewData["talla"] = $_POST["talla"];
-    $this->viewData["enlace_imagen"] = $_POST["enlace_imagen"];
+
 
     if ($this->viewData["mode"] !== "DEL") {
       $this->viewData["estado"] = $_POST["estado"];
