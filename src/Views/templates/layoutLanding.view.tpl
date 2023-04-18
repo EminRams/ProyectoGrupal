@@ -133,7 +133,6 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-lg-4">
           <div class="text-center p-3">
@@ -220,76 +219,39 @@
   <!-- START PRICING -->
   <section class="py-5 bg-light-lighten border-top border-bottom border-light" id="pricing">
     <div class="container">
-      <div class="row">
+
+      <div class="row py-4">
         <div class="col-lg-12">
           <div class="text-center">
-            <h1 class="mt-0"><i class="mdi mdi-tag-multiple"></i></h1>
-            <h3>Precios bajos<span class="text-primary"> garantizados</span></h3>
-            <p class="text-muted mt-2"> En El Bulto nos esforzamos por ofrecerte la mejor calidad al precio más bajo
-              posible. Si encuentras un precio más bajo en otra tienda en línea, háganoslo saber y ajustaremos nuestro
-              precio para igualar o superar el precio de la competencia.
-
-            </p>
+            <h1 class="mt-0"><i class="mdi mdi-shopping"></i></h1>
+            <h3>Mira nuestros Productos conocidos <span class="text-primary">Por su gran calidad</span><span
+                class="text-primary"></span></h3>
           </div>
         </div>
       </div>
 
-      <div class="row mt-5 pt-3">
-        <div class="col-md-4">
-          <div class="card d-block">
-            <img class="card-img-top" src="/{{BASE_DIR}}/public/images/camiseta.png" alt="Card image cap">
+      <div class="row g-1">
+        {{foreach productos}}
+        <div class="col-4">
+          <div class="card">
+            <h5 class="card-header">{{nombre}}</h5>
             <div class="card-body">
-              <h5 class="card-title">Camiseta Básica</h5>
-              <h6>$20</h6>
-              <p class="card-text"> Nuestra camiseta básica es una prenda esencial para cualquier guardarropa.
-                Confeccionada en algodón suave y resistente, esta camiseta es perfecta para usar en cualquier ocasión.
-                Disponible en varios colores clásicos.</p>
-              <a href="javascript: void(0);" class="btn btn-primary">Comprar ahora
-                <i class="mdi mdi-cart-arrow-right ms-1"></i></a>
-            </div> <!-- end card-body-->
+              <h5 class="card-title">Detalles</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Marca: {{marca}}</li>
+                <li class="list-group-item">Talla: {{marca}}</li>
+                <li class="list-group-item">Categoria: {{categoria}}</li>
+                <li class="list-group-item">Color: {{color}}</li>
+                <li class="list-group-item">Precio: {{precio}}</li>
+              </ul>
+            </div>
+            <div class="card-footer text-muted d-flex justify-content-center">
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
           </div>
-          <!-- end Pricing_card -->
         </div>
-        <!-- end col -->
-
-        <div class="col-md-4">
-          <div class="card d-block">
-            <img class="card-img-top" src="/{{BASE_DIR}}/public/images/chaqueta.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Chaqueta de Cuero</h5>
-              <h6>$25</h6>
-              <p class="card-text"> Nuestra chaqueta de cuero es una prenda atemporal y duradera. Confeccionada en cuero
-                de alta calidad, esta chaqueta es resistente y elegante. Cuenta con varios bolsillos y un cierre de
-                cremallera frontal. Disponible en varios colores clásicos.</p>
-              <a href="javascript: void(0);" class="btn btn-primary">Comprar ahora
-                <i class="mdi mdi-cart-arrow-right ms-1"></i>
-              </a>
-            </div> <!-- end card-body-->
-          </div>
-          <!-- end Pricing_card -->
-        </div>
-        <!-- end col -->
-
-        <div class="col-md-4">
-          <div class="card d-block">
-            <img class="card-img-top" src="/{{BASE_DIR}}/public/images/vestido.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Vestido de Flores</h5>
-              <h6>$15</h6>
-              <p class="card-text">Nuestro vestido de flores es una prenda elegante y femenina. Confeccionado en una
-                tela ligera y cómoda, este vestido cuenta con un estampado floral llamativo y una silueta favorecedora.
-                Ideal para ocasiones especiales o para uso diario.</p>
-              <a href="javascript: void(0);" class="btn btn-primary">Comprar ahora
-                <i class="mdi mdi-cart-arrow-right ms-1"></i>
-              </a>
-            </div> <!-- end card-body-->
-          </div>
-          <!-- end Pricing_card -->
-        </div>
-        <!-- end col -->
-
+        {{endfor productos}}
       </div>
-
     </div>
   </section>
   <!-- END PRICING -->
