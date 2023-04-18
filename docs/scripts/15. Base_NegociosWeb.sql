@@ -141,12 +141,16 @@ CREATE TABLE `detalle_ventas` (
 CREATE algorithm = undefined definer = `root` @`localhost` SQL security definer view `el_bulto`.`productos_v` AS 
 SELECT 
   `p`.`id_producto` AS `id_producto`, 
-  `m`.`nombre` AS `marca`, 
   `p`.`nombre` AS `nombre`, 
+  `p`.`precio` as `precio`,
+  `p`.`descripcion` as `descripcion`,
   `p`.`stock` AS `stock`, 
   `p`.`talla` AS `talla`, 
   `p`.`enlace_imagen` AS `enlace_imagen`, 
-  `p`.`estado` AS `estado` 
+  `p`.`estado` AS `estado`,
+  `c`.`nombre` AS `categoria`,
+  `m`.`nombre` AS `marca`,
+  `co`.`nombre` AS `color`
 FROM 
   (
     (
