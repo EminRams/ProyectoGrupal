@@ -214,8 +214,6 @@
   </section>
   <!-- END SERVICES -->
 
-
-
   <!-- START PRICING -->
   <section class="py-5 bg-light-lighten border-top border-bottom border-light" id="pricing">
     <div class="container">
@@ -230,11 +228,11 @@
         </div>
       </div>
 
-      <div class="row g-1">
+      <div class="row g-2 justify-content-center">
         {{foreach productos}}
         <div class="col-4">
-          <div class="card">
-            <h5 class="card-header">{{nombre}}</h5>
+          <div class="card h-100">
+            <h3 class="card-header text-center">{{nombre}}</h3>
             <div class="card-body">
               <h5 class="card-title">Detalles</h5>
               <ul class="list-group list-group-flush">
@@ -254,7 +252,80 @@
       </div>
     </div>
   </section>
+
   <!-- END PRICING -->
+  <section class="py-5 bg-light-lighten border-top border-bottom border-light" id="pricing">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-center">
+            <h1 class="mt-0"><i class="mdi mdi-tag-multiple"></i></h1>
+            <h3>Precios bajos<span class="text-primary"> garantizados</span></h3>
+            <p class="text-muted mt-2"> En El Bulto nos esforzamos por ofrecerte la mejor calidad al precio más bajo
+              posible. Si encuentras un precio más bajo en otra tienda en línea, háganoslo saber y ajustaremos nuestro
+              precio para igualar o superar el precio de la competencia.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5 pt-3">
+        <div class="col-md-4">
+          <div class="card d-block h-100 p-2">
+            <img class="card-img-top mx-auto d-block" src="/{{BASE_DIR}}/public/images/camiseta.png"
+              alt="Card image cap" style="height: 200px; width:auto;">
+            <div class="card-body">
+              <h5 class="card-title">Camiseta Básica</h5>
+              <h6>$20</h6>
+              <p class="card-text"> Nuestra camiseta básica es una prenda esencial para cualquier guardarropa.
+                Confeccionada en algodón suave y resistente, esta camiseta es perfecta para usar en cualquier ocasión.
+                Disponible en varios colores clásicos.</p>
+            </div>
+            <div class="card-footer d-flex flex-wrap justify-content-center">
+              <a href="javascript: void(0);" class="btn btn-primary">Comprar ahora<i
+                  class="mdi mdi-cart-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card d-block h-100 p-2">
+            <img class="card-img-top card-img-top mx-auto d-block" src="/{{BASE_DIR}}/public/images/chaqueta.png"
+              alt="Card image cap" style="height: 200px; width:auto;">
+            <div class="card-body">
+              <h5 class="card-title">Chaqueta de Cuero</h5>
+              <h6>$25</h6>
+              <p class="card-text"> Nuestra chaqueta de cuero es una prenda atemporal y duradera. Confeccionada en cuero
+                de alta calidad, esta chaqueta es resistente y elegante. Cuenta con varios bolsillos y un cierre de
+                cremallera frontal. Disponible en varios colores clásicos.</p>
+            </div>
+            <div class="card-footer text-muted d-flex justify-content-center">
+              <a href="javascript: void(0);" class="btn btn-primary">Comprar ahora
+                <i class="mdi mdi-cart-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card d-block h-100 p-2">
+            <img class="card-img-top card-img-top mx-auto d-block" src="/{{BASE_DIR}}/public/images/vestido.png"
+              alt="Card image cap" style="height: 200px; width:auto;">
+            <div class="card-body">
+              <h5 class="card-title">Vestido de Flores</h5>
+              <h6>$15</h6>
+              <p class="card-text">Nuestro vestido de flores es una prenda elegante y femenina. Confeccionado en una
+                tela ligera y cómoda, este vestido cuenta con un estampado floral llamativo y una silueta favorecedora.
+                Ideal para ocasiones especiales o para uso diario.</p>
+            </div>
+            <div class="card-footer text-muted d-flex justify-content-center">
+              <a href="javascript: void(0);" class="btn btn-primary">Comprar ahora
+                <i class="mdi mdi-cart-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- START FAQ -->
   <section class="py-5" id="FAQ">
