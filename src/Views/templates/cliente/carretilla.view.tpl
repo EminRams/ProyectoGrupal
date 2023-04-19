@@ -2,7 +2,6 @@
 <div class="row">
     <div class="col-12">
         <div class="page-title-box">
-
             <h1 class="page-title">Shopping Cart</h1>
         </div>
     </div>

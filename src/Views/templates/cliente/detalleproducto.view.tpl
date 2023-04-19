@@ -11,7 +11,7 @@
             </a>
           </div> <!-- end col -->
           <div class="col-lg-7">
-            <form class="ps-lg-4">
+            <form action="index.php?page=cliente_detalleproducto" method="post" class="ps-lg-4">
               <!-- Product title -->
               <h3 class="mt-0"> {{nombre}} <a href="javascript: void(0);" class="text-muted"><i
                     class="mdi mdi-square-edit-outline ms-2"></i></a> </h3>
@@ -38,8 +38,10 @@
               <div class="mt-4">
                 <h6 class="font-14">Quantity</h6>
                 <div class="d-flex">
-                  <input type="number" min="1" value="1" class="form-control" placeholder="Qty" style="width: 90px;">
-                  <button type="button" class="btn btn-danger ms-2"><i class="mdi mdi-cart me-1"></i>
+                  <input type="hidden" name="id_producto" value="{{id_producto}}">
+                  <input type="number" min="1" value="1" class="form-control" name="qty" placeholder="Qty"
+                    style="width: 90px;">
+                  <button type="submit" class="btn btn-danger ms-2"><i class="mdi mdi-cart me-1"></i>
                     Add to cart</button>
                 </div>
               </div>
@@ -67,7 +69,6 @@
                   </div>
                 </div>
               </div>
-
             </form>
           </div> <!-- end col -->
         </div> <!-- end row-->
