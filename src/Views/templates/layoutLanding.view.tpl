@@ -235,12 +235,14 @@
             <h3 class="card-header text-center">{{nombre}}</h3>
             <div class="card-body">
               <h5 class="card-title">Detalles</h5>
+
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Marca: {{marca}}</li>
-                <li class="list-group-item">Talla: {{marca}}</li>
-                <li class="list-group-item">Categoria: {{categoria}}</li>
+                <li class="list-group-item">Talla: {{talla}}</li>
+                <li class="list-group-item">Categoría: {{categoria}}</li>
                 <li class="list-group-item">Color: {{color}}</li>
                 <li class="list-group-item">Precio: {{precio}}</li>
+                <img src="/ProyectoGrupal/public/images/pic1.png" alt="" class="img-fluid">
               </ul>
             </div>
             <div class="card-footer text-muted d-flex justify-content-center">
@@ -282,8 +284,8 @@
                 Disponible en varios colores clásicos.</p>
             </div>
             <div class="card-footer d-flex flex-wrap justify-content-center">
-              <a href="javascript: void(0);" class="btn btn-primary">Comprar ahora<i
-                  class="mdi mdi-cart-arrow-right ms-1"></i></a>
+              <a href="javascript: void(0);" class="btn btn-primary">Comprar ahora
+                <i class="mdi mdi-cart-arrow-right ms-1"></i></a>
             </div>
           </div>
         </div>

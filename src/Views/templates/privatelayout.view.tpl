@@ -70,7 +70,7 @@
           {{foreach NAVIGATION}}
           <li class="side-nav-item">
             <a href="{{nav_url}}" class="side-nav-link">
-              <i class="dripicons-box"></i>
+              <i class="dripicons-arrow-thin-right"></i>
               <span> {{nav_label}} </span>
             </a>
           </li>
