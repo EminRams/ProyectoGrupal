@@ -101,7 +101,7 @@ class Productos extends Table
 
   public static function findById(int $id_producto)
   {
-    $sqlstr = "SELECT * FROM productos WHERE id_producto = :id_producto;";
+    $sqlstr = "SELECT * FROM productos_v WHERE id_producto = :id_producto;";
     $row = self::obtenerUnRegistro(
       $sqlstr,
       array(

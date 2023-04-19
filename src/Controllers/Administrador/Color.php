@@ -197,7 +197,7 @@ class Color extends PrivateController
     } else {
       $tmpColores = \Dao\Admin\Colores::findById($this->viewData["id_color"]);
       if (!$tmpColores) {
-        throw new Exception("La color no existe en la DB");
+        throw new Exception("El color no existe en la DB");
       }
 
       \Utilities\ArrUtils::mergeFullArrayTo($tmpColores, $this->viewData);
