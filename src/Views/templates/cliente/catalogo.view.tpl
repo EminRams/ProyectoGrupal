@@ -1,3 +1,13 @@
+<!-- start page title -->
+<div class="row">
+  <div class="col-12">
+    <div class="page-title-box">
+
+      <h1 class="page-title">Catálogo</h1>
+    </div>
+  </div>
+</div>
+<!-- end page title -->
 <div class="row g-1">
   {{foreach productos}}
   <div class="col-4">

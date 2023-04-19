@@ -58,19 +58,10 @@
         <!-- right menu -->
         <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item me-0">
-            <a href="index.php?page=administrador_index" target="_blank" class="nav-link d-lg-none">Administrador</a>
-            <a href="index.php?page=administrador_index" target="_blank"
-              class="btn btn-sm btn-light btn-rounded d-none d-lg-inline-flex">
-              <i class="mdi mdi-basket me-2"></i> Administrador
-            </a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item me-0">
-            <a href="index.php?page=cliente_index" target="_blank" class="nav-link d-lg-none">Cliente</a>
+            <a href="index.php?page=cliente_index" target="_blank" class="nav-link d-lg-none">Catálogo</a>
             <a href="index.php?page=cliente_index" target="_blank"
               class="btn btn-sm btn-light btn-rounded d-none d-lg-inline-flex">
-              <i class="mdi mdi-basket me-2"></i> Cliente
+              <i class="mdi mdi-basket me-2"></i> Catálogo
             </a>
           </li>
         </ul>
@@ -80,7 +71,7 @@
               Sesión</a>
             <a href="index.php?page=seguridad_login" target="_blank"
               class="btn btn-sm btn-light btn-rounded d-none d-lg-inline-flex">
-              <i class="mdi mdi-basket me-2"></i> Iniciar Sesión
+              <i class="mdi mdi-account me-2"></i> Iniciar Sesión
             </a>
           </li>
         </ul>
@@ -106,7 +97,7 @@
             <p class="mb-4 font-16 text-white-50">¿Quieres lucir a la moda sin gastar una fortuna? Entonces estás en el
               lugar correcto. En El Bulto, encontrarás ropa moderna y de alta calidad a precios que te encantarán.</p>
 
-            <a href="" target="_blank" class="btn btn-success">Comprar ahora
+            <a href="index.php?page=cliente_index" target="_blank" class="btn btn-success">Comprar ahora
               <i class="mdi mdi-cart-arrow-right ms-1"></i></a>
           </div>
         </div>
@@ -243,7 +234,7 @@
                 Disponible en varios colores clásicos.</p>
             </div>
             <div class="card-footer d-flex flex-wrap justify-content-center">
-              <a href="javascript: void(0);" class="btn btn-primary">Comprar ahora
+              <a href="index.php?page=cliente_index" class="btn btn-primary">Comprar ahora
                 <i class="mdi mdi-cart-arrow-right ms-1"></i></a>
             </div>
           </div>
@@ -261,7 +252,7 @@
                 cremallera frontal. Disponible en varios colores clásicos.</p>
             </div>
             <div class="card-footer text-muted d-flex justify-content-center">
-              <a href="javascript: void(0);" class="btn btn-primary">Comprar ahora
+              <a href="index.php?page=cliente_index" class="btn btn-primary">Comprar ahora
                 <i class="mdi mdi-cart-arrow-right ms-1"></i></a>
             </div>
           </div>
@@ -279,7 +270,7 @@
                 Ideal para ocasiones especiales o para uso diario.</p>
             </div>
             <div class="card-footer text-muted d-flex justify-content-center">
-              <a href="javascript: void(0);" class="btn btn-primary">Comprar ahora
+              <a href="index.php?page=cliente_index" class="btn btn-primary">Comprar ahora
                 <i class="mdi mdi-cart-arrow-right ms-1"></i></a>
             </div>
           </div>

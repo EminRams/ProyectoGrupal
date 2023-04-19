@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Dashboard | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+  <title>Compra en línea | El Bulto</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
   <meta content="Coderthemes" name="author">
@@ -20,7 +20,7 @@
 
   <link href="/{{BASE_DIR}}/public/css/icons.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/app.min.css" type="text/css" id="light-style" />
-  <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/app-dark.min.css" type="text/css" id="dark-style" />
+
 
 
 
@@ -34,23 +34,26 @@
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
 
-    <div class="content-page">
+    <div class="content-page" style="margin-left: 10px;">
       <div class="content">
         <!-- Topbar Start -->
-        <div class="navbar-custom">
-          <ul class="list-unstyled topbar-menu float-end mb-0">
-            <li class="dropdown notification-list d-lg-none">
-              <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
-                aria-haspopup="false" aria-expanded="false">
-                <i class="dripicons-search noti-icon"></i>
-              </a>
-              <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
-                <form class="p-3">
-                  <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                </form>
-              </div>
-            </li>
 
+        <div class="navbar-custom" style="left: 0px;">
+          <a href="index.php?page=cliente_index"><img src="/{{BASE_DIR}}/public/images/logo-dark.png" alt=""
+              class="logo-dark" height="72"></a>
+          <ul class="list-unstyled topbar-menu float-end mb-0">
+
+
+
+
+
+
+
+            <li class="notification-list">
+              <a class="nav-link" href="index.php?page=cliente_carretilla">
+                <i class="mdi mdi-cart noti-icon"></i>
+              </a>
+            </li>
             <li class="notification-list">
               <a class="nav-link end-bar-toggle" href="javascript: void(0);">
                 <i class="dripicons-gear noti-icon"></i>
@@ -150,7 +153,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-6">
-              <script>document.write(new Date().getFullYear())</script> © Hyper - Coderthemes.com
+              <script>document.write(new Date().getFullYear())</script> © El Bulto
             </div>
             <div class="col-md-6">
               <div class="text-md-end footer-links d-none d-md-block">

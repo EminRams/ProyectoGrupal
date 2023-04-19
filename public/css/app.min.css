@@ -12383,7 +12383,7 @@ body[data-leftbar-theme="dark"][data-leftbar-compact-mode="condensed"]
 }
 .navbar-custom {
   padding: 0 24px;
-  background-color: #fff;
+  background-color: #c9cdf7;
   -webkit-box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
   box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
   min-height: 70px;
@@ -12394,7 +12394,7 @@ body[data-leftbar-theme="dark"][data-leftbar-compact-mode="condensed"]
   z-index: 1001;
 }
 .navbar-custom .topbar-left {
-  background-color: #fff;
+  background-color: #c9cdf7;
   height: 70px;
   position: fixed;
   z-index: 1;
@@ -12422,7 +12422,7 @@ body[data-leftbar-theme="dark"][data-leftbar-compact-mode="condensed"]
 }
 .navbar-custom .topbar-menu .nav-link {
   padding: 0;
-  color: #98a6ad;
+  color: #fff;
   min-width: 32px;
   display: block;
   text-align: center;
@@ -12537,7 +12537,7 @@ body[data-leftbar-theme="dark"][data-leftbar-compact-mode="condensed"]
   padding: calc(31px / 2) 20px calc(31px / 2) 57px !important;
   text-align: left !important;
   position: relative;
-  background-color: #fafbfd;
+  background-color: #afb2da;
   border: 1px solid #f1f3fa;
   border-width: 0 1px;
   min-height: 70px;
