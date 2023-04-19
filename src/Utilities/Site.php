@@ -14,7 +14,7 @@ class Site
     {
         $pageRequest = "index";
         if (\Utilities\Security::isLogged()) {
-            $pageRequest = "Mnt\\Quotes";
+            $pageRequest = "Administrador\\Index";
         }
         if (isset($_GET["page"])) {
             $pageRequest = str_replace(array("_", "-", "."), "\\", $_GET["page"]);
@@ -28,16 +28,16 @@ class Site
     {
         if (Context::getContextByKey("USE_URLREWRITE") == "1") {
             header("Location:" . \Views\Renderer::rewriteUrl($url));
-        } else { 
+        } else {
             header("Location:" . $url);
         }
-        
+
         die();
     }
     public static function redirectToWithMsg($url, $msg)
     {
-        echo '<script>alert("'.$msg. '");';
-        echo ' window.location.assign("'.$url.'");</script>';
+        echo '<script>alert("' . $msg . '");';
+        echo ' window.location.assign("' . $url . '");</script>';
         die();
     }
     public static function addLink($href)
