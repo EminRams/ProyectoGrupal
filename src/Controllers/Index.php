@@ -13,7 +13,6 @@ class Index extends PublicController
   {
     
     $viewData = array();
-    $viewData["productos"] = \Dao\Admin\Productos::findAll();
     \Views\Renderer::render("index", $viewData, 'layoutLanding.view.tpl');
   }
 }

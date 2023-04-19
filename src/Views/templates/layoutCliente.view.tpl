@@ -26,67 +26,9 @@
 
 </head>
 
-<body class="loading"
-  data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+<body class="loading">
   <!-- Begin page -->
   <div class="wrapper">
-    <!-- ========== Left Sidebar Start ========== -->
-    <div class="leftside-menu">
-
-      <!-- LOGO -->
-      <a href="index.html" class="logo text-center logo-light">
-        <span class="logo-lg">
-          <img src="/{{BASE_DIR}}/public/images/logo.png" alt="" height="80">
-        </span>
-        <span class="logo-sm">
-          <img src="/{{BASE_DIR}}/public/images/logo_sm.png" alt="" height="80">
-        </span>
-      </a>
-
-      <!-- LOGO -->
-      <a href="index.html" class="logo text-center logo-dark">
-        <span class="logo-lg">
-          <img src="/{{BASE_DIR}}/public/images/logo-dark.png" alt="" height="80">
-        </span>
-        <span class="logo-sm">
-          <img src="/{{BASE_DIR}}/public/images/logo_sm_dark.png" alt="" height="80">
-        </span>
-      </a>
-
-      <div class="h-100" id="leftside-menu-container" data-simplebar="">
-
-        <!--- Sidemenu -->
-        <ul class="side-nav">
-
-          <li class="side-nav-item">
-            <a href="index.php" class="side-nav-link">
-              <i class="uil-home-alt"></i>
-              <span> Inicio </span>
-            </a>
-          </li>
-
-
-          <li class="side-nav-title side-nav-item">Menú</li>
-
-          <li class="side-nav-item">
-            <a href="#" class="side-nav-link">
-              <i class="dripicons-arrow-thin-right"></i>
-              <span> Catálogo </span>
-            </a>
-          </li>
-
-        </ul>
-
-
-        <!-- End Sidebar -->
-
-        <div class="clearfix"></div>
-
-      </div>
-      <!-- Sidebar -left -->
-
-    </div>
-    <!-- Left Sidebar End -->
 
     <!-- ============================================================== -->
     <!-- Start Page Content here -->
@@ -109,11 +51,6 @@
               </div>
             </li>
 
-
-
-
-
-
             <li class="notification-list">
               <a class="nav-link end-bar-toggle" href="javascript: void(0);">
                 <i class="dripicons-gear noti-icon"></i>
@@ -127,17 +64,11 @@
                   <img src="/{{BASE_DIR}}/public/images/users/user.png" alt="user-image" class="rounded-circle">
                 </span>
                 <span>
-
                   <span class="account-user-name">Bienvenido</span>
-
                   <span class="account-position">Usuario</span>
                 </span>
               </a>
               <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-
-
-
-
                 <!-- item-->
                 <a href="index.php?page=seguridad_logout" class="dropdown-item notify-item">
                   <i class="mdi mdi-logout me-1"></i>

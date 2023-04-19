@@ -217,46 +217,6 @@
   <!-- START PRICING -->
   <section class="py-5 bg-light-lighten border-top border-bottom border-light" id="pricing">
     <div class="container">
-
-      <div class="row py-4">
-        <div class="col-lg-12">
-          <div class="text-center">
-            <h1 class="mt-0"><i class="mdi mdi-shopping"></i></h1>
-            <h3>Mira nuestros Productos conocidos <span class="text-primary">Por su gran calidad</span><span
-                class="text-primary"></span></h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="row g-2 justify-content-center">
-        {{foreach productos}}
-        <div class="col-4">
-          <div class="card h-100">
-            <h3 class="card-header text-center">{{nombre}}</h3>
-            <div class="card-body">
-
-              <img class="card-img-top mx-auto d-block" src="/ProyectoGrupal/public/images/pic{{id_producto}}.png"
-                alt="Card image cap" style="height: 200px; width:auto;">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Marca: {{marca}}</li>
-                <li class="list-group-item">Talla: {{talla}}</li>
-                <li class="list-group-item">Precio: {{precio}}</li>
-
-              </ul>
-            </div>
-            <div class="card-footer text-muted d-flex justify-content-center">
-              <a href="#" class="btn btn-primary">Add to Cart</a>
-            </div>
-          </div>
-        </div>
-        {{endfor productos}}
-      </div>
-    </div>
-  </section>
-
-  <!-- END PRICING -->
-  <section class="py-5 bg-light-lighten border-top border-bottom border-light" id="pricing">
-    <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="text-center">
