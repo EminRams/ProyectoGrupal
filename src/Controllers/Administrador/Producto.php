@@ -24,6 +24,7 @@ class Producto extends PrivateController
     "stock" => 0,
     "talla" => "",
     "enlace_imagen" => "",
+    "i" => 0,
     "estado" => "ACT",
     "estado_ACT" => "selected",
     "estado_INA" => "",

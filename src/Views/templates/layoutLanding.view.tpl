@@ -234,15 +234,14 @@
           <div class="card h-100">
             <h3 class="card-header text-center">{{nombre}}</h3>
             <div class="card-body">
-              <h5 class="card-title">Detalles</h5>
 
+              <img class="card-img-top mx-auto d-block" src="/ProyectoGrupal/public/images/pic{{id_producto}}.png"
+                alt="Card image cap" style="height: 200px; width:auto;">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Marca: {{marca}}</li>
                 <li class="list-group-item">Talla: {{talla}}</li>
-                <li class="list-group-item">Categoría: {{categoria}}</li>
-                <li class="list-group-item">Color: {{color}}</li>
                 <li class="list-group-item">Precio: {{precio}}</li>
-                <img src="/ProyectoGrupal/public/images/pic1.png" alt="" class="img-fluid">
+
               </ul>
             </div>
             <div class="card-footer text-muted d-flex justify-content-center">
