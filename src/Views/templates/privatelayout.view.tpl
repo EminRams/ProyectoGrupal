@@ -17,12 +17,9 @@
 
   <!-- App css -->
 
-
   <link href="/{{BASE_DIR}}/public/css/icons.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/app.min.css" type="text/css" id="light-style" />
   <link rel="stylesheet" href="/{{BASE_DIR}}/public/css/app-dark.min.css" type="text/css" id="dark-style" />
-
-
 
 </head>
 
@@ -54,18 +51,14 @@
       </a>
 
       <div class="h-100" id="leftside-menu-container" data-simplebar="">
-
         <!--- Sidemenu -->
         <ul class="side-nav">
-
           <li class="side-nav-item">
             <a href="index.php" class="side-nav-link">
               <i class="uil-home-alt"></i>
               <span> Inicio </span>
             </a>
           </li>
-
-
           <li class="side-nav-title side-nav-item">Administración</li>
           {{foreach NAVIGATION}}
           <li class="side-nav-item">
@@ -76,15 +69,10 @@
           </li>
           {{endfor NAVIGATION}}
         </ul>
-
-
         <!-- End Sidebar -->
-
         <div class="clearfix"></div>
-
       </div>
       <!-- Sidebar -left -->
-
     </div>
     <!-- Left Sidebar End -->
 
@@ -108,11 +96,6 @@
                 </form>
               </div>
             </li>
-
-
-
-
-
 
             <li class="notification-list">
               <a class="nav-link end-bar-toggle" href="javascript: void(0);">
