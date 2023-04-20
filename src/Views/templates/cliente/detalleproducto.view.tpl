@@ -25,30 +25,30 @@
 
               <!-- Product stock -->
               <div class="mt-3">
-                <h4><span class="badge badge-success-lighten">Instock</span></h4>
+                <h4><span class="badge badge-success-lighten">En stock</span></h4>
               </div>
 
               <!-- Product description -->
               <div class="mt-4">
-                <h6 class="font-14">Retail Price:</h6>
-                <h3>L. {{precio}}</h3>
+                <h6 class="font-14">Precio:</h6>
+                <h3>$. {{precio}}</h3>
               </div>
 
               <!-- Quantity -->
               <div class="mt-4">
-                <h6 class="font-14">Quantity</h6>
+                <h6 class="font-14">Cantidad</h6>
                 <div class="d-flex">
                   <input type="hidden" name="id_producto" value="{{id_producto}}">
-                  <input type="number" min="1" value="1" class="form-control" name="qty" placeholder="Qty"
+                  <input type="number" min="1" value="1" class="form-control" name="quantity" placeholder="Qty"
                     style="width: 90px;">
                   <button type="submit" class="btn btn-danger ms-2"><i class="mdi mdi-cart me-1"></i>
-                    Add to cart</button>
+                    Añadir al carrito</button>
                 </div>
               </div>
 
               <!-- Product description -->
               <div class="mt-4">
-                <h6 class="font-14">Description:</h6>
+                <h6 class="font-14">Descripción:</h6>
                 <p>{{descripcion}}</p>
               </div>
 
@@ -56,16 +56,8 @@
               <div class="mt-4">
                 <div class="row">
                   <div class="col-md-4">
-                    <h6 class="font-14">Available Stock:</h6>
+                    <h6 class="font-14">Disponibles en stock:</h6>
                     <p class="text-sm lh-150">{{stock}}</p>
-                  </div>
-                  <div class="col-md-4">
-                    <h6 class="font-14">Number of Orders:</h6>
-                    <p class="text-sm lh-150">5,458</p>
-                  </div>
-                  <div class="col-md-4">
-                    <h6 class="font-14">Revenue:</h6>
-                    <p class="text-sm lh-150">$8,57,014</p>
                   </div>
                 </div>
               </div>

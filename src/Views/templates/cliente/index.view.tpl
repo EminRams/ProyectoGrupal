@@ -9,7 +9,7 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><b>Marca:</b> {{marca}}</li>
           <li class="list-group-item"><b>Talla:</b> {{talla}}</li>
-          <li class="list-group-item"><b>Precio:</b> L. {{precio}}</li>
+          <li class="list-group-item"><b>Precio:</b> $. {{precio}}</li>
         </ul>
       </div>
       <div class="card-footer text-muted d-flex justify-content-center">
