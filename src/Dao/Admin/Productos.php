@@ -123,6 +123,19 @@ class Productos extends Table
     return $row;
   }
 
+  public static function updateStock(string $id_producto, string $stock)
+  {
+    $sqlstr = "UPDATE productos SET stock = :stock WHERE id_producto = :id_producto;";
+    $rowsUpdated = self::executeNonQuery(
+      $sqlstr,
+      array(
+        "id_producto" => $id_producto,
+        "stock" => $stock
+      )
+    );
+    return $rowsUpdated;
+  }
+
   // public static function findCategorias()
   // {
   //   $sqlstr = "SELECT nombre FROM categorias";

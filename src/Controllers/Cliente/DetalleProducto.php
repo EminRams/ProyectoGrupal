@@ -26,25 +26,20 @@ class DetalleProducto extends PublicController
       $producto = \Dao\Admin\Productos::findById($_GET["id_producto"]);
       \Utilities\ArrUtils::mergeFullArrayTo($producto, $viewData);
     } else if (isset($_POST["id_producto"])) {
-
       if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = array();
       }
-
       $producto = array(
         "id_producto" => $_POST['id_producto'],
         "quantity" => $_POST['quantity'],
       );
-
       foreach ($_SESSION['cart'] as $key => $value) {
         if ($value['id_producto'] == $producto['id_producto']) {
           $producto['quantity'] += $value['quantity'];
           unset($_SESSION['cart'][$key]);
         }
       }
-
       array_push($_SESSION['cart'], $producto);
-
       \Utilities\Site::redirectTo("index.php?page=cliente_carretilla");
       // \Utilities\Site::redirectTo("test.php");
     } else {
