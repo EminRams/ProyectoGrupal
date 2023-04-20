@@ -21,18 +21,18 @@ class Accept extends PublicController
       $dataview['lastname'] = $result["result"]["payer"]["name"]["surname"];
       $dataview['gross_amount'] = $result["result"]["purchase_units"][0]["payments"]["captures"][0]["amount"]["value"];
       $dataview['net_amount'] = $result["result"]["purchase_units"][0]["payments"]["captures"][0]["seller_receivable_breakdown"]["net_amount"]["value"];
-
+      print_r($result);
       if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
         $user = \Utilities\Security::getUserId();
         $cart = $_SESSION['cart'];
 
-        $insert = \Dao\Admin\Encabezado_Ventas::insert($dataview['id'], $user, date("Y-m-d"));
+        \Dao\Admin\EncabezadoVentas::insert($dataview['id'], $user, date("Y-m-d"));
 
         foreach ($cart as $key => $value) {
           $producto = \Dao\Admin\Productos::findById($value['id_producto']);
           $producto['quantity'] = $value['quantity'];
           \Dao\Admin\Productos::updateStock($producto['id_producto'], $producto['stock'] - $producto['quantity']);
-          \Dao\Admin\Detalle_Ventas::insert($dataview['id'], $producto['id_producto'], $producto['quantity'], $producto['precio']);
+          \Dao\Admin\DetalleVentas::insert($dataview['id'], $producto['id_producto'], $producto['quantity'], $producto['precio']);
         }
 
         unset($_SESSION['cart']);
