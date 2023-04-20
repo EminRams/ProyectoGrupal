@@ -17,7 +17,7 @@ use Dao\Table;
 
 class DetalleVentas extends Table
 {
-  public static function insert(string $id_venta, string $id_producto, string $cantidad, string $precio): int
+  public static function insert(string $id_venta, string $id_producto, int $cantidad, float $precio): int
   {
     $sqlstr = "INSERT INTO detalle_ventas (id_venta, id_producto, cantidad, precio) values (:id_venta, :id_producto, :cantidad, :precio);";
 
@@ -25,7 +25,7 @@ class DetalleVentas extends Table
       $sqlstr,
       array(
         'id_venta' => $id_venta,
-        'id_usuario' => $id_producto,
+        'id_producto' => $id_producto,
         'cantidad' => $cantidad,
         'precio' => $precio,
       )
