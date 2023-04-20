@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-12">
     <div class="page-title-box">
-      <h1 class="page-title">Shopping Cart</h1>
+      <h1 class="page-title">Carrito de compras</h1>
     </div>
   </div>
 </div>
@@ -44,8 +44,7 @@
                       $. {{precio}}
                     </td>
                     <td>
-                      <input type="number" min="1" value="{{quantity}}" class="form-control" placeholder="Qty"
-                        style="width: 90px;">
+                      {{quantity}}
                     </td>
                     <td>
                       $. {{total}}
@@ -64,12 +63,12 @@
               <div class="col-sm-6">
                 <a href="index.php?page=cliente_index"
                   class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
-                  <i class="mdi mdi-arrow-left"></i> Continue Shopping </a>
+                  <i class="mdi mdi-arrow-left"></i> Continuar comprando </a>
               </div> <!-- end col -->
               <div class="col-sm-6">
                 <div class="text-sm-end">
-                  <a href="index.php?page=cliente_checkout" class="btn btn-danger">
-                    <i class="mdi mdi-cart-plus me-1"></i> Checkout </a>
+                  <a href="index.php?page=checkout_checkout" class="btn btn-danger">
+                    <i class="mdi mdi-cart-plus me-1"></i> Pagar </a>
                 </div>
               </div> <!-- end col -->
             </div> <!-- end row-->
