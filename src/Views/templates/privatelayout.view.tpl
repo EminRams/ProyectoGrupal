@@ -59,7 +59,7 @@
               <span> Inicio </span>
             </a>
           </li>
-          <li class="side-nav-title side-nav-item">Administración</li>
+          <li class="side-nav-title side-nav-item"></li>
           {{foreach NAVIGATION}}
           <li class="side-nav-item">
             <a href="{{nav_url}}" class="side-nav-link">
