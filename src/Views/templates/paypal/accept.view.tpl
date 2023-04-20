@@ -37,8 +37,9 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-6 mb-3">
+</div>
+
+  <div class="col-sm-6 mb-1">
     <a href="index.php?page=cliente_index" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
       <i class="mdi mdi-arrow-left"></i> Volver al inicio </a>
   </div> <!-- end col -->
-</div>
