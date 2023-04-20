@@ -2,9 +2,9 @@
 
 namespace Controllers\Checkout;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
 
-class Checkout extends PublicController{
+class Checkout extends PrivateController{
     public function run():void
     {
         $viewData = array();
@@ -30,8 +30,8 @@ class Checkout extends PublicController{
                 $PayPalOrder->addItem($producto["nombre"], $producto["nombre"], $producto["id"], $producto["precio"], $producto["precio"] * 0.15, $producto["quantity"], "DIGITAL_GOODS");
             }
 
-            $PayPalOrder->addItem("Test", "TestItem1", "PRD1", 100, 15, 1, "DIGITAL_GOODS");
-            $PayPalOrder->addItem("Test 2", "TestItem2", "PRD2", 50, 7.5, 2, "DIGITAL_GOODS");
+            // $PayPalOrder->addItem("Test", "TestItem1", "PRD1", 100, 15, 1, "DIGITAL_GOODS");
+            // $PayPalOrder->addItem("Test 2", "TestItem2", "PRD2", 50, 7.5, 2, "DIGITAL_GOODS");
             $response = $PayPalOrder->createOrder();
             $_SESSION["orderid"] = $response[1]->result->id;
             \Utilities\Site::redirectTo($response[0]->href);
