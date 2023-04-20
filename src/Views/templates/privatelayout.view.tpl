@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Dashboard | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+  <title>El Bulto | Cracks de Negocios Web</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
   <meta content="Coderthemes" name="author">
@@ -119,37 +119,12 @@
               <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                 <!-- item-->
                 <div class=" dropdown-header noti-title">
-                  <h6 class="text-overflow m-0">Welcome !</h6>
+                  <h6 class="text-overflow m-0">Bienvenido !</h6>
                 </div>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                  <i class="mdi mdi-account-circle me-1"></i>
-                  <span>My Account</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                  <i class="mdi mdi-account-edit me-1"></i>
-                  <span>Settings</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                  <i class="mdi mdi-lifebuoy me-1"></i>
-                  <span>Support</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                  <i class="mdi mdi-lock-outline me-1"></i>
-                  <span>Lock Screen</span>
-                </a>
-
                 <!-- item-->
                 <a href="index.php?page=seguridad_logout" class="dropdown-item notify-item">
                   <i class="mdi mdi-logout me-1"></i>
-                  <span>Logout</span>
+                  <span>Cerrar Sesión</span>
                 </a>
               </div>
             </li>
@@ -163,64 +138,12 @@
               <div class="input-group">
                 <input type="text" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
                 <span class="mdi mdi-magnify search-icon"></span>
-                <button class="input-group-text btn-primary" type="submit">Search</button>
+                <button class="input-group-text btn-primary" type="submit">Buscar</button>
               </div>
             </form>
 
             <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
               <!-- item-->
-              <div class="dropdown-header noti-title">
-                <h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results</h5>
-              </div>
-
-              <!-- item-->
-              <a href="javascript:void(0);" class="dropdown-item notify-item">
-                <i class="uil-notes font-16 me-1"></i>
-                <span>Analytics Report</span>
-              </a>
-
-              <!-- item-->
-              <a href="javascript:void(0);" class="dropdown-item notify-item">
-                <i class="uil-life-ring font-16 me-1"></i>
-                <span>How can I help you?</span>
-              </a>
-
-              <!-- item-->
-              <a href="javascript:void(0);" class="dropdown-item notify-item">
-                <i class="uil-cog font-16 me-1"></i>
-                <span>User profile settings</span>
-              </a>
-
-              <!-- item-->
-              <div class="dropdown-header noti-title">
-                <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
-              </div>
-
-              <div class="notification-list">
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                  <div class="d-flex">
-                    <img class="d-flex me-2 rounded-circle" src="/{{BASE_DIR}}/public/images/users/avatar-2.jpg"
-                      alt="Generic placeholder image" height="32">
-                    <div class="w-100">
-                      <h5 class="m-0 font-14">Erwin Brown</h5>
-                      <span class="font-12 mb-0">UI Designer</span>
-                    </div>
-                  </div>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                  <div class="d-flex">
-                    <img class="d-flex me-2 rounded-circle" src="/{{BASE_DIR}}/public/images/users/avatar-5.jpg"
-                      alt="Generic placeholder image" height="32">
-                    <div class="w-100">
-                      <h5 class="m-0 font-14">Jacob Deo</h5>
-                      <span class="font-12 mb-0">Developer</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -236,14 +159,8 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-6">
-              <script>document.write(new Date().getFullYear())</script> © Hyper - Coderthemes.com
+              <script>document.write(new Date().getFullYear())</script> © Negocios - Negocios.com
             </div>
-            <div class="col-md-6">
-              <div class="text-md-end footer-links d-none d-md-block">
-                <a href="javascript: void(0);">About</a>
-                <a href="javascript: void(0);">Support</a>
-                <a href="javascript: void(0);">Contact Us</a>
-              </div>
             </div>
           </div>
         </div>
@@ -267,18 +184,18 @@
       <a href="javascript:void(0);" class="end-bar-toggle float-end">
         <i class="dripicons-cross noti-icon"></i>
       </a>
-      <h5 class="m-0">Settings</h5>
+      <h5 class="m-0">Configuración</h5>
     </div>
 
     <div class="rightbar-content h-100" data-simplebar="">
 
       <div class="p-3">
         <div class="alert alert-warning" role="alert">
-          <strong>Customize </strong> the overall color scheme, sidebar menu, etc.
+          <strong>Personalizar </strong>
         </div>
 
         <!-- Settings -->
-        <h5 class="mt-3">Color Scheme</h5>
+        <h5 class="mt-3">Color del esquema</h5>
         <hr class="mt-1">
 
         <div class="form-check form-switch mb-1">

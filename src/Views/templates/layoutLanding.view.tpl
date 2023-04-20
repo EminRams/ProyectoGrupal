@@ -34,7 +34,7 @@
       </button>
 
       <!-- menus -->
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown"></div>
 
         <!-- left menu -->
         <ul class="navbar-nav me-auto align-items-center">
