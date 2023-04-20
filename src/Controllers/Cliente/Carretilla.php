@@ -16,7 +16,16 @@ class Carretilla extends PublicController
     {
 
         $viewData = array();
-        $viewData["productos"] = \Dao\Admin\Productos::findAll();
+        $viewData["products"] = array();
+        $products = $_SESSION['cart'];
+        
+        if(isset($_SESSION['cart'])){
+          foreach($products as $key => $value){
+            array_push($viewData['products'], \Dao\Admin\Productos::findById($value['id_producto']));
+          }
+        }
+        
+        $viewData["cart"] = $_SESSION['cart'];
         \Views\Renderer::render("cliente/carretilla", $viewData, 'layoutCliente.view.tpl');
     }
 }
