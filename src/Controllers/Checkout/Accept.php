@@ -21,6 +21,7 @@ class Accept extends PublicController
             $dataview['name'] = $result["result"]["payer"]["name"]["given_name"];
             $dataview['lastname'] = $result["result"]["payer"]["name"]["surname"];
             $dataview['gross_amount'] = $result["result"]["purchase_units"][0]["payments"]["captures"][0]["amount"]["value"];
+            $dataview['paypal_fee'] = $result["result"]["purchase_units"][0]["payments"]["captures"][0]["seller_receivable_breakdown"]["paypal_fee"]["value"];
             $dataview['net_amount'] = $result["result"]["purchase_units"][0]["payments"]["captures"][0]["seller_receivable_breakdown"]["net_amount"]["value"];
             print_r($result);
             if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
