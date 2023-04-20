@@ -28,11 +28,6 @@
         </div>
         <hr style="border: 2px solid black;">
       </div>
-      <div class="text-center" style="margin-top: 90px;">
-        <a><u class="text-info">View in browser</u></a>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-      </div>
-
     </div>
   </div>
 </div>
