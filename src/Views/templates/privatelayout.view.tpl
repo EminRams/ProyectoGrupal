@@ -31,7 +31,7 @@
     <div class="leftside-menu">
 
       <!-- LOGO -->
-      <a href="index.html" class="logo text-center logo-light">
+      <a href="index.php" class="logo text-center logo-light">
         <span class="logo-lg">
           <img src="/{{BASE_DIR}}/public/images/logo.png" alt="" height="80">
         </span>
