@@ -63,6 +63,12 @@ class Nav
         "nav_label" => "Prendas"
       );
     }
+
+    $tmpNAVIGATION[] = array(
+      "nav_url" => "index.php?page=Cliente_Index",
+      "nav_label" => "Catálogo de productos"
+    );
+    
     \Utilities\Context::setContext("NAVIGATION", $tmpNAVIGATION);
   }
 

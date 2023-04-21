@@ -121,7 +121,7 @@ CREATE TABLE `bitacora` (
   PRIMARY KEY (`bitacoracod`)
 );
 CREATE TABLE `encabezado_ventas` (
-  `id_venta` INT NOT NULL auto_increment, 
+  `id_venta` VARCHAR(20) NOT NULL, 
   `usercod` bigint(10) NOT NULL, 
   `fecha` DATETIME DEFAULT NULL, 
   PRIMARY KEY (`id_venta`), 
@@ -129,7 +129,7 @@ CREATE TABLE `encabezado_ventas` (
   CONSTRAINT `encabezado_ventas_ibfk_1` FOREIGN KEY (`usercod`) REFERENCES `usuario` (`usercod`)
 );
 CREATE TABLE `detalle_ventas` (
-  `id_venta` INT NOT NULL, 
+  `id_venta` VARCHAR(20) NOT NULL, 
   `id_producto` INT NOT NULL, 
   `cantidad` INT DEFAULT NULL, 
   `precio` DECIMAL(10, 0) DEFAULT NULL, 
