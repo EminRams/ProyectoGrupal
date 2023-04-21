@@ -39,7 +39,7 @@
                 <h6 class="font-14">Cantidad</h6>
                 <div class="d-flex">
                   <input type="hidden" name="id_producto" value="{{id_producto}}">
-                  <input type="number" min="1" value="1" class="form-control" name="quantity" placeholder="Qty"
+                  <input type="number" min="1" max="{{stock}}" value="1" class="form-control" name="quantity" placeholder="Qty"
                     style="width: 90px;">
                   <button type="submit" class="btn btn-danger ms-2"><i class="mdi mdi-cart me-1"></i>
                     Añadir al carrito</button>
